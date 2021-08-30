@@ -53,10 +53,46 @@ namespace PublicDomainWeekly
         public string Hotkey { get; set; } = "None";
 
         /// <summary>
-        /// Gets or sets the command argument list.
+        /// Gets or sets the delay milliseconds.
         /// </summary>
-        /// <value>The command argument list.</value>
-        public List<string> CommandArgumentList { get; set; } = new List<string>();
+        /// <value>The delay milliseconds.</value>
+        public int DelayMilliseconds { get; set; } = 75;
+
+        /// <summary>
+        /// Gets or sets the comma translation.
+        /// </summary>
+        /// <value>The comma translation.</value>
+        public string CommaTranslation { get; set; } = "{TAB}";
+
+        /// <summary>
+        /// Gets or sets the new line translation.
+        /// </summary>
+        /// <value>The new line translation.</value>
+        public string NewLineTranslation { get; set; } = "{ENTER";
+
+        /// <summary>
+        /// Gets or sets the lines per press.
+        /// </summary>
+        /// <value>The lines per press.</value>
+        public int LinesPerPress { get; set; } = 0;
+
+        /// <summary>
+        /// Gets or sets the input file.
+        /// </summary>
+        /// <value>The input file.</value>
+        public string InputFile { get; set; } = string.Empty;
+
+        /// <summary>
+        /// Gets or sets the index.
+        /// </summary>
+        /// <value>The index.</value>
+        public int LineIndex { get; set; } = 1;
+
+        /// <summary>
+        /// Gets or sets the index of the character.
+        /// </summary>
+        /// <value>The index of the character.</value>
+        public int CharacterIndex { get; set; } = 1;
 
         /// <summary>
         /// Gets or sets a value indicating whether this <see cref="T:PublicDomain.SettingsData"/> enable hotkeys.

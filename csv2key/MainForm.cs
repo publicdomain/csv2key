@@ -115,6 +115,16 @@ namespace csv2key
         }
 
         /// <summary>
+        /// Handles the csv file browse button click.
+        /// </summary>
+        /// <param name="sender">Sender object.</param>
+        /// <param name="e">Event arguments.</param>
+        private void OnCsvFileBrowseButtonClick(object sender, EventArgs e)
+        {
+            // TODO Add code
+        }
+
+        /// <summary>
         /// GUIs to settings sata.
         /// </summary>
         private void GuiToSettingsSata()
@@ -130,12 +140,17 @@ namespace csv2key
             // Hotkey
             this.settingsData.Hotkey = this.keyComboBox.SelectedItem.ToString();
 
-            // Check for items
-            /*if (this.programListBox.Items.Count > 0)
-            {
-                // Set nito settings data
-                this.settingsData.CommandArgumentList = this.programListBox.Items.OfType<String>().ToList();
-            }*/
+            // Delay
+            this.settingsData.DelayMilliseconds = int.Parse(this.delayComboBox.Text);
+
+            // Comma
+            this.settingsData.CommaTranslation = this.commaTranslationTextBox.Text;
+
+            // New line
+            this.settingsData.NewLineTranslation = this.newLineTranslationTextBox.Text;
+
+            // Lines per press
+            this.settingsData.LinesPerPress = Convert.ToInt32(this.linesNumericUpDown.Value);
 
             // Active/Inactive
             this.settingsData.EnableHotkeys = this.activeRadioButton.Checked;
@@ -222,7 +237,7 @@ namespace csv2key
 
 
         /// <summary>
-        /// Ons the new tool strip menu item click.
+        /// Handles the new tool strip menu item click.
         /// </summary>
         /// <param name="sender">Sender object.</param>
         /// <param name="e">Event arguments.</param>
@@ -232,7 +247,7 @@ namespace csv2key
         }
 
         /// <summary>
-        /// Ons the open tool strip menu item click.
+        /// Handles the open tool strip menu item click.
         /// </summary>
         /// <param name="sender">Sender object.</param>
         /// <param name="e">Event arguments.</param>
@@ -242,7 +257,7 @@ namespace csv2key
         }
 
         /// <summary>
-        /// Ons the exit tool strip menu item click.
+        /// Handles the exit tool strip menu item click.
         /// </summary>
         /// <param name="sender">Sender object.</param>
         /// <param name="e">Event arguments.</param>
@@ -252,7 +267,7 @@ namespace csv2key
         }
 
         /// <summary>
-        /// Ons the options tool strip menu item drop down item clicked.
+        /// Handles the options tool strip menu item drop down item clicked.
         /// </summary>
         /// <param name="sender">Sender object.</param>
         /// <param name="e">Event arguments.</param>
@@ -262,7 +277,7 @@ namespace csv2key
         }
 
         /// <summary>
-        /// Ons the weekly releases public domain weeklycom tool strip menu item click.
+        /// Handles the weekly releases public domain weeklycom tool strip menu item click.
         /// </summary>
         /// <param name="sender">Sender object.</param>
         /// <param name="e">Event arguments.</param>
@@ -272,7 +287,7 @@ namespace csv2key
         }
 
         /// <summary>
-        /// Ons the original thread donation codercom tool strip menu item click.
+        /// Handles the original thread donation codercom tool strip menu item click.
         /// </summary>
         /// <param name="sender">Sender object.</param>
         /// <param name="e">Event arguments.</param>
@@ -282,7 +297,7 @@ namespace csv2key
         }
 
         /// <summary>
-        /// Ons the source code githubcom tool strip menu item click.
+        /// Handles the source code githubcom tool strip menu item click.
         /// </summary>
         /// <param name="sender">Sender object.</param>
         /// <param name="e">Event arguments.</param>
@@ -292,7 +307,7 @@ namespace csv2key
         }
 
         /// <summary>
-        /// Ons the about tool strip menu item click.
+        /// Handles the about tool strip menu item click.
         /// </summary>
         /// <param name="sender">Sender object.</param>
         /// <param name="e">Event arguments.</param>
@@ -302,7 +317,7 @@ namespace csv2key
         }
 
         /// <summary>
-        /// Ons the main form load.
+        /// Handles the main form load.
         /// </summary>
         /// <param name="sender">Sender object.</param>
         /// <param name="e">Event arguments.</param>
@@ -312,7 +327,7 @@ namespace csv2key
         }
 
         /// <summary>
-        /// Ons the main form form closing.
+        /// Handles the main form form closing.
         /// </summary>
         /// <param name="sender">Sender object.</param>
         /// <param name="e">Event arguments.</param>
@@ -322,7 +337,7 @@ namespace csv2key
         }
 
         /// <summary>
-        /// Ons the active radio button checked changed.
+        /// Handles the active radio button checked changed.
         /// </summary>
         /// <param name="sender">Sender object.</param>
         /// <param name="e">Event arguments.</param>
@@ -332,7 +347,7 @@ namespace csv2key
         }
 
         /// <summary>
-        /// Ons the inactive radio button checked changed.
+        /// Handles the inactive radio button checked changed.
         /// </summary>
         /// <param name="sender">Sender object.</param>
         /// <param name="e">Event arguments.</param>
@@ -384,5 +399,7 @@ namespace csv2key
                 MessageBox.Show($"Error saving settings file.{Environment.NewLine}{Environment.NewLine}Message:{Environment.NewLine}{exception.Message}", "File error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+
     }
 }
