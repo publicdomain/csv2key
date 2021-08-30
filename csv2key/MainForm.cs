@@ -369,6 +369,11 @@ namespace csv2key
         /// <param name="e">Event arguments.</param>
         private void OnMainFormFormClosing(object sender, FormClosingEventArgs e)
         {
+            // Set settings from GUI
+            this.GuiToSettingsSata();
+
+            // Save to disk
+            this.SaveSettingsFile(this.settingsDataPath, this.settingsData);
         }
 
         /// <summary>
