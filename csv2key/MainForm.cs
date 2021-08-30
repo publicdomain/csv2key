@@ -210,7 +210,7 @@ namespace csv2key
             /* TODO // Set bold font
             this.activeRadioButton.Font = new Font(this.activeRadioButton.Font, this.activeRadioButton.Checked ? FontStyle.Bold : FontStyle.Regular);
             this.inactiveRadioButton.Font = new Font(this.inactiveRadioButton.Font, !this.activeRadioButton.Checked ? FontStyle.Bold : FontStyle.Regular);
-            */
+
 
             // Try to unregister the key
             try
@@ -235,7 +235,7 @@ namespace csv2key
             catch (Exception ex)
             {
                 // Let it fall through
-            }
+            }*/
         }
 
         /// <summary>
@@ -355,7 +355,11 @@ namespace csv2key
         /// <param name="e">Event arguments.</param>
         private void OnMainFormLoad(object sender, EventArgs e)
         {
-            // TODO Add code
+            // Update GUI to reflect settings data
+            this.SettingsDataToGui();
+
+            // HACK Topmost on start [DEBUG]
+            this.TopMost = this.settingsData.TopMost;
         }
 
         /// <summary>
@@ -365,7 +369,6 @@ namespace csv2key
         /// <param name="e">Event arguments.</param>
         private void OnMainFormFormClosing(object sender, FormClosingEventArgs e)
         {
-            // TODO Add code
         }
 
         /// <summary>
