@@ -115,7 +115,7 @@ namespace csv2key
         }
 
         /// <summary>
-        /// Handles the csv file browse button click.
+        /// Handles the csv file browse button click event.
         /// </summary>
         /// <param name="sender">Sender object.</param>
         /// <param name="e">Event arguments.</param>
@@ -125,7 +125,7 @@ namespace csv2key
         }
 
         /// <summary>
-        /// GUIs to settings sata.
+        /// GUI to settings sata.
         /// </summary>
         private void GuiToSettingsSata()
         {
@@ -157,7 +157,7 @@ namespace csv2key
         }
 
         /// <summary>
-        /// Settingses the data to GUI.
+        /// Loads SettingsData to GUI.
         /// </summary>
         private void SettingsDataToGui()
         {
@@ -279,7 +279,7 @@ namespace csv2key
 
 
         /// <summary>
-        /// Handles the new tool strip menu item click.
+        /// Handles the new tool strip menu item click event.
         /// </summary>
         /// <param name="sender">Sender object.</param>
         /// <param name="e">Event arguments.</param>
@@ -289,7 +289,7 @@ namespace csv2key
         }
 
         /// <summary>
-        /// Handles the open tool strip menu item click.
+        /// Handles the open tool strip menu item click event.
         /// </summary>
         /// <param name="sender">Sender object.</param>
         /// <param name="e">Event arguments.</param>
@@ -299,17 +299,7 @@ namespace csv2key
         }
 
         /// <summary>
-        /// Handles the exit tool strip menu item click.
-        /// </summary>
-        /// <param name="sender">Sender object.</param>
-        /// <param name="e">Event arguments.</param>
-        private void OnExitToolStripMenuItemClick(object sender, EventArgs e)
-        {
-            // TODO Add code
-        }
-
-        /// <summary>
-        /// Handles the options tool strip menu item drop down item clicked.
+        /// Handles the options tool strip menu item drop down item clicked event.
         /// </summary>
         /// <param name="sender">Sender object.</param>
         /// <param name="e">Event arguments.</param>
@@ -319,7 +309,7 @@ namespace csv2key
         }
 
         /// <summary>
-        /// Handles the weekly releases public domain weeklycom tool strip menu item click.
+        /// Handles the weekly releases public domain weeklycom tool strip menu item click event.
         /// </summary>
         /// <param name="sender">Sender object.</param>
         /// <param name="e">Event arguments.</param>
@@ -329,7 +319,7 @@ namespace csv2key
         }
 
         /// <summary>
-        /// Handles the original thread donation codercom tool strip menu item click.
+        /// Handles the original thread donation codercom tool strip menu item click event.
         /// </summary>
         /// <param name="sender">Sender object.</param>
         /// <param name="e">Event arguments.</param>
@@ -339,7 +329,7 @@ namespace csv2key
         }
 
         /// <summary>
-        /// Handles the source code githubcom tool strip menu item click.
+        /// Handles the source code githubcom tool strip menu item click event.
         /// </summary>
         /// <param name="sender">Sender object.</param>
         /// <param name="e">Event arguments.</param>
@@ -349,7 +339,7 @@ namespace csv2key
         }
 
         /// <summary>
-        /// Handles the about tool strip menu item click.
+        /// Handles the about tool strip menu item click event.
         /// </summary>
         /// <param name="sender">Sender object.</param>
         /// <param name="e">Event arguments.</param>
@@ -359,7 +349,7 @@ namespace csv2key
         }
 
         /// <summary>
-        /// Handles the main form load.
+        /// Handles the main form load event.
         /// </summary>
         /// <param name="sender">Sender object.</param>
         /// <param name="e">Event arguments.</param>
@@ -369,7 +359,7 @@ namespace csv2key
         }
 
         /// <summary>
-        /// Handles the main form form closing.
+        /// Handles the main form form closing event.
         /// </summary>
         /// <param name="sender">Sender object.</param>
         /// <param name="e">Event arguments.</param>
@@ -379,7 +369,7 @@ namespace csv2key
         }
 
         /// <summary>
-        /// Handles the active radio button checked changed.
+        /// Handles the active radio button checked changed event.
         /// </summary>
         /// <param name="sender">Sender object.</param>
         /// <param name="e">Event arguments.</param>
@@ -389,7 +379,7 @@ namespace csv2key
         }
 
         /// <summary>
-        /// Handles the inactive radio button checked changed.
+        /// Handles the inactive radio button checked changed event.
         /// </summary>
         /// <param name="sender">Sender object.</param>
         /// <param name="e">Event arguments.</param>
@@ -442,6 +432,15 @@ namespace csv2key
             }
         }
 
-
+        /// <summary>
+        /// Handles the exit tool strip menu item click event.
+        /// </summary>
+        /// <param name="sender">Sender object.</param>
+        /// <param name="e">Event arguments.</param>
+        private void OnExitToolStripMenuItemClick(object sender, EventArgs e)
+        {
+            // Close program
+            this.Close();
+        }
     }
 }
