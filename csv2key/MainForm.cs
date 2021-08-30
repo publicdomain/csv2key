@@ -157,6 +157,48 @@ namespace csv2key
         }
 
         /// <summary>
+        /// Settingses the data to GUI.
+        /// </summary>
+        private void SettingsDataToGui()
+        {
+            // Topmost
+            this.alwaysOnTopToolStripMenuItem.Checked = this.settingsData.TopMost;
+
+            // Modifier checkboxes
+            this.controlCheckBox.Checked = this.settingsData.Control;
+            this.altCheckBox.Checked = this.settingsData.Alt;
+            this.shiftCheckBox.Checked = this.settingsData.Shift;
+
+            // Hotkey
+            this.keyComboBox.SelectedItem = this.settingsData.Hotkey;
+
+            // Delay
+            this.delayComboBox.Text = this.settingsData.DelayMilliseconds.ToString();
+
+            // Comma
+            this.commaTranslationTextBox.Text = this.settingsData.CommaTranslation;
+
+            // New line
+            this.newLineTranslationTextBox.Text = this.settingsData.NewLineTranslation;
+
+            // Lines per press
+            this.linesNumericUpDown.Value = this.settingsData.LinesPerPress;
+
+
+            // Check active or inactive
+            if (this.settingsData.EnableHotkeys)
+            {
+                // Check active
+                this.activeRadioButton.Checked = true;
+            }
+            else
+            {
+                // Check inactive
+                this.inactiveRadioButton.Checked = true;
+            }
+        }
+
+        /// <summary>
         /// Handles the radio button click event.
         /// </summary>
         /// <param name="sender">Sender object.</param>
