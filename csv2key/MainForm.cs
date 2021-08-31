@@ -212,16 +212,7 @@ namespace csv2key
             this.inactiveRadioButton.Font = new Font(this.inactiveRadioButton.Font, !this.activeRadioButton.Checked ? FontStyle.Bold : FontStyle.Regular);
 
 
-            // Try to unregister the key
-            try
-            {
-                // Unregister the hotkey
-                UnregisterHotKey(this.Handle, 0);
-            }
-            catch (Exception ex)
-            {
-                // Let it fall through
-            }
+           
 
             // Try to register the key
             try
@@ -246,34 +237,10 @@ namespace csv2key
         {
             base.WndProc(ref m);
 
+            // Check for hotkey press
             if (m.Msg == WM_HOTKEY)
             {
-                // Start all in list
-                /*foreach (var item in this.programListBox.Items)
-                {
-                    // Split by tab
-                    var commandArgument = item.ToString().Split("\t".ToCharArray());
-
-                    try
-                    {
-                        // TODO Start via process [Can be improcess i.e. by StartInfo]
-                        if (commandArgument.Length == 1)
-                        {
-                            // Command
-                            Process.Start(commandArgument[0]);
-                        }
-                        else
-                        {
-                            // Command + arguments
-                            Process.Start(commandArgument[0], commandArgument[1]);
-                        }
-                    }
-                    catch (Exception ex)
-                    {
-                        // Advise user
-                        MessageBox.Show($"Command: {commandArgument[0]}{Environment.NewLine}{(commandArgument.Length > 1 ? $"Arguments: {commandArgument[1]}{Environment.NewLine}" : string.Empty)}{Environment.NewLine}Message:{Environment.NewLine}{ex.Message}", "Process start eror", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
-                }*/
+                // TODO Add code
             }
         }
 
@@ -393,7 +360,20 @@ namespace csv2key
         /// <param name="e">Event arguments.</param>
         private void OnInactiveRadioButtonCheckedChanged(object sender, EventArgs e)
         {
-            // TODO Add code
+            // make radio button bold
+            this.activeRadioButton.Font = new Font(this.activeRadioButton.Font, FontStyle.Regular);
+            this.inactiveRadioButton.Font = new Font(this.inactiveRadioButton.Font, FontStyle.Bold);
+
+            // Try to unregister the key
+            try
+            {
+                // Unregister the hotkey
+                UnregisterHotKey(this.Handle, 0);
+            }
+            catch
+            {
+                // Let it fall through
+            }
         }
 
         /// <summary>
