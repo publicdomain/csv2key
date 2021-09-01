@@ -263,7 +263,8 @@ namespace csv2key
         /// <param name="e">Event arguments.</param>
         private void OnOriginalThreadDonationCodercomToolStripMenuItemClick(object sender, EventArgs e)
         {
-            // TODO Add code
+            // Open GitHub repository
+            Process.Start("https://github.com/publicdomain/csv2key");
         }
 
         /// <summary>
