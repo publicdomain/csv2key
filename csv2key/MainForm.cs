@@ -199,37 +199,6 @@ namespace csv2key
         }
 
         /// <summary>
-        /// Handles the radio button click event.
-        /// </summary>
-        /// <param name="sender">Sender object.</param>
-        /// <param name="e">Event arguments.</param>
-        private void OnRadioButtonClick(object sender, EventArgs e)
-        {
-            /* TODO Improve Register/Unregister of hotkeys [This can be made more efficient by keeping a good track, especially with recurring calls due to checkboxes, et cetera] */
-
-            /* TODO // Set bold font
-            this.activeRadioButton.Font = new Font(this.activeRadioButton.Font, this.activeRadioButton.Checked ? FontStyle.Bold : FontStyle.Regular);
-            this.inactiveRadioButton.Font = new Font(this.inactiveRadioButton.Font, !this.activeRadioButton.Checked ? FontStyle.Bold : FontStyle.Regular);
-
-
-           
-
-            // Try to register the key
-            try
-            {
-                if (this.activeRadioButton.Checked && this.keyComboBox.SelectedItem.ToString() != "None")
-                {
-                    // Register the hotkey
-                    RegisterHotKey(this.Handle, 0, (this.controlCheckBox.Checked ? MOD_CONTROL : 0) + (this.altCheckBox.Checked ? MOD_ALT : 0) + (this.shiftCheckBox.Checked ? MOD_SHIFT : 0), Convert.ToInt16((Keys)Enum.Parse(typeof(Keys), this.keyComboBox.SelectedItem.ToString(), true)));
-                }
-            }
-            catch (Exception ex)
-            {
-                // Let it fall through
-            }*/
-        }
-
-        /// <summary>
         /// Windows the proc.
         /// </summary>
         /// <param name="m">M.</param>
@@ -350,8 +319,33 @@ namespace csv2key
         /// <param name="e">Event arguments.</param>
         private void OnActiveRadioButtonCheckedChanged(object sender, EventArgs e)
         {
-            // TODO Add code
+            // make radio button bold
+            this.inactiveRadioButton.Font = new Font(this.activeRadioButton.Font, FontStyle.Regular);
+            this.activeRadioButton.Font = new Font(this.inactiveRadioButton.Font, FontStyle.Bold);
+
+            // Try to unregister the key
+            try
+            {
+                // Unregister the hotkey
+                UnregisterHotKey(this.Handle, 0);
+            }
+            catch
+            {
+                // Let it fall through
+            }
+
+            // Hotkey registration
+            try
+            {
+                // Register the hotkey with selected modifiers
+                RegisterHotKey(this.Handle, 0, (this.controlCheckBox.Checked ? MOD_CONTROL : 0) + (this.altCheckBox.Checked ? MOD_ALT : 0) + (this.shiftCheckBox.Checked ? MOD_SHIFT : 0), Convert.ToInt16((Keys)Enum.Parse(typeof(Keys), this.keyComboBox.SelectedItem.ToString(), true)));
+            }
+            catch
+            {
+                // Let it fall through
+            }
         }
+
 
         /// <summary>
         /// Handles the inactive radio button checked changed event.
