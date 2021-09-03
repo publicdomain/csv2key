@@ -298,8 +298,10 @@ namespace csv2key
         	this.csvLinesTextBox.Location = new System.Drawing.Point(3, 93);
         	this.csvLinesTextBox.Multiline = true;
         	this.csvLinesTextBox.Name = "csvLinesTextBox";
+        	this.csvLinesTextBox.ScrollBars = System.Windows.Forms.ScrollBars.Both;
         	this.csvLinesTextBox.Size = new System.Drawing.Size(282, 79);
         	this.csvLinesTextBox.TabIndex = 7;
+        	this.csvLinesTextBox.WordWrap = false;
         	// 
         	// delayLabel
         	// 
@@ -480,7 +482,7 @@ namespace csv2key
         	this.newToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Magenta;
         	this.newToolStripMenuItem.Name = "newToolStripMenuItem";
         	this.newToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.N)));
-        	this.newToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
+        	this.newToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
         	this.newToolStripMenuItem.Text = "&New";
         	this.newToolStripMenuItem.Click += new System.EventHandler(this.OnNewToolStripMenuItemClick);
         	// 
@@ -490,14 +492,14 @@ namespace csv2key
         	this.openToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Magenta;
         	this.openToolStripMenuItem.Name = "openToolStripMenuItem";
         	this.openToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.O)));
-        	this.openToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
+        	this.openToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
         	this.openToolStripMenuItem.Text = "&Open";
-        	this.openToolStripMenuItem.Click += new System.EventHandler(this.OnOpenToolStripMenuItemClick);
+        	this.openToolStripMenuItem.Click += new System.EventHandler(this.OnCsvFileBrowseButtonClick);
         	// 
         	// toolStripSeparator
         	// 
         	this.toolStripSeparator.Name = "toolStripSeparator";
-        	this.toolStripSeparator.Size = new System.Drawing.Size(143, 6);
+        	this.toolStripSeparator.Size = new System.Drawing.Size(149, 6);
         	this.toolStripSeparator.Visible = false;
         	// 
         	// saveToolStripMenuItem
@@ -506,21 +508,21 @@ namespace csv2key
         	this.saveToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Magenta;
         	this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
         	this.saveToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.S)));
-        	this.saveToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
+        	this.saveToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
         	this.saveToolStripMenuItem.Text = "&Save";
         	this.saveToolStripMenuItem.Visible = false;
         	// 
         	// saveAsToolStripMenuItem
         	// 
         	this.saveAsToolStripMenuItem.Name = "saveAsToolStripMenuItem";
-        	this.saveAsToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
+        	this.saveAsToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
         	this.saveAsToolStripMenuItem.Text = "Save &As";
         	this.saveAsToolStripMenuItem.Visible = false;
         	// 
         	// toolStripSeparator1
         	// 
         	this.toolStripSeparator1.Name = "toolStripSeparator1";
-        	this.toolStripSeparator1.Size = new System.Drawing.Size(143, 6);
+        	this.toolStripSeparator1.Size = new System.Drawing.Size(149, 6);
         	this.toolStripSeparator1.Visible = false;
         	// 
         	// printToolStripMenuItem
@@ -529,7 +531,7 @@ namespace csv2key
         	this.printToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Magenta;
         	this.printToolStripMenuItem.Name = "printToolStripMenuItem";
         	this.printToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.P)));
-        	this.printToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
+        	this.printToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
         	this.printToolStripMenuItem.Text = "&Print";
         	this.printToolStripMenuItem.Visible = false;
         	// 
@@ -538,19 +540,19 @@ namespace csv2key
         	this.printPreviewToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("printPreviewToolStripMenuItem.Image")));
         	this.printPreviewToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Magenta;
         	this.printPreviewToolStripMenuItem.Name = "printPreviewToolStripMenuItem";
-        	this.printPreviewToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
+        	this.printPreviewToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
         	this.printPreviewToolStripMenuItem.Text = "Print Pre&view";
         	this.printPreviewToolStripMenuItem.Visible = false;
         	// 
         	// toolStripSeparator3
         	// 
         	this.toolStripSeparator3.Name = "toolStripSeparator3";
-        	this.toolStripSeparator3.Size = new System.Drawing.Size(143, 6);
+        	this.toolStripSeparator3.Size = new System.Drawing.Size(149, 6);
         	// 
         	// exitToolStripMenuItem
         	// 
         	this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-        	this.exitToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
+        	this.exitToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
         	this.exitToolStripMenuItem.Text = "E&xit";
         	this.exitToolStripMenuItem.Click += new System.EventHandler(this.OnExitToolStripMenuItemClick);
         	// 

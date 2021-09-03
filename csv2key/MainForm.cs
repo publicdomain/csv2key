@@ -122,7 +122,26 @@ namespace csv2key
         /// <param name="e">Event arguments.</param>
         private void OnCsvFileBrowseButtonClick(object sender, EventArgs e)
         {
-            // TODO Add code
+            // Reset file name
+            this.openFileDialog.FileName = string.Empty;
+
+            // Show open file dialog
+            if (this.openFileDialog.ShowDialog() == DialogResult.OK && this.openFileDialog.FileName.Length > 0)
+            {
+                try
+                {
+                    // Set file name
+                    this.csvFileTextBox.Text = this.openFileDialog.FileName;
+
+                    // Set CSV text 
+                    this.csvLinesTextBox.Text = File.ReadAllText(this.openFileDialog.FileName);
+                }
+                catch (Exception exception)
+                {
+                    // Inform user
+                    MessageBox.Show($"Error when opening \"{Path.GetFileName(this.openFileDialog.FileName)}\":{Environment.NewLine}{exception.Message}", "Open file error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
         }
 
         /// <summary>
@@ -221,16 +240,6 @@ namespace csv2key
         /// <param name="sender">Sender object.</param>
         /// <param name="e">Event arguments.</param>
         private void OnNewToolStripMenuItemClick(object sender, EventArgs e)
-        {
-            // TODO Add code
-        }
-
-        /// <summary>
-        /// Handles the open tool strip menu item click event.
-        /// </summary>
-        /// <param name="sender">Sender object.</param>
-        /// <param name="e">Event arguments.</param>
-        private void OnOpenToolStripMenuItemClick(object sender, EventArgs e)
         {
             // TODO Add code
         }
