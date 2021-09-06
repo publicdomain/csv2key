@@ -36,604 +36,609 @@ namespace csv2key
         /// </summary>
         private void InitializeComponent()
         {
-        	System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
-        	this.csvFileBrowseButton = new System.Windows.Forms.Button();
-        	this.indexToolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
-        	this.mainStatusStrip = new System.Windows.Forms.StatusStrip();
-        	this.linesToolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
-        	this.lineCountToolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
-        	this.indexCountToolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
-        	this.mainTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
-        	this.hotkeyCombinationLabel = new System.Windows.Forms.Label();
-        	this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-        	this.controlCheckBox = new System.Windows.Forms.CheckBox();
-        	this.altCheckBox = new System.Windows.Forms.CheckBox();
-        	this.shiftCheckBox = new System.Windows.Forms.CheckBox();
-        	this.keyComboBox = new System.Windows.Forms.ComboBox();
-        	this.commandArgumentLabel = new System.Windows.Forms.Label();
-        	this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
-        	this.csvFileTextBox = new System.Windows.Forms.TextBox();
-        	this.csvLinesTextBox = new System.Windows.Forms.TextBox();
-        	this.delayLabel = new System.Windows.Forms.Label();
-        	this.label2 = new System.Windows.Forms.Label();
-        	this.label3 = new System.Windows.Forms.Label();
-        	this.label4 = new System.Windows.Forms.Label();
-        	this.delayComboBox = new System.Windows.Forms.ComboBox();
-        	this.commaTranslationTextBox = new System.Windows.Forms.TextBox();
-        	this.newLineTranslationTextBox = new System.Windows.Forms.TextBox();
-        	this.linesNumericUpDown = new System.Windows.Forms.NumericUpDown();
-        	this.activeRadioButton = new System.Windows.Forms.RadioButton();
-        	this.inactiveRadioButton = new System.Windows.Forms.RadioButton();
-        	this.alwaysOnTopToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-        	this.optionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-        	this.minimizeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-        	this.mainMenuStrip = new System.Windows.Forms.MenuStrip();
-        	this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-        	this.newToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-        	this.openToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-        	this.toolStripSeparator = new System.Windows.Forms.ToolStripSeparator();
-        	this.saveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-        	this.saveAsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-        	this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-        	this.printToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-        	this.printPreviewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-        	this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
-        	this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-        	this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-        	this.weeklyReleasesPublicDomainWeeklycomToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-        	this.originalThreadDonationCodercomToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-        	this.sourceCodeGithubcomToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-        	this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-        	this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-        	this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
-        	this.mainStatusStrip.SuspendLayout();
-        	this.mainTableLayoutPanel.SuspendLayout();
-        	this.tableLayoutPanel1.SuspendLayout();
-        	this.tableLayoutPanel2.SuspendLayout();
-        	((System.ComponentModel.ISupportInitialize)(this.linesNumericUpDown)).BeginInit();
-        	this.mainMenuStrip.SuspendLayout();
-        	this.SuspendLayout();
-        	// 
-        	// csvFileBrowseButton
-        	// 
-        	this.csvFileBrowseButton.Dock = System.Windows.Forms.DockStyle.Fill;
-        	this.csvFileBrowseButton.Location = new System.Drawing.Point(219, 1);
-        	this.csvFileBrowseButton.Margin = new System.Windows.Forms.Padding(3, 1, 3, 1);
-        	this.csvFileBrowseButton.Name = "csvFileBrowseButton";
-        	this.csvFileBrowseButton.Size = new System.Drawing.Size(66, 23);
-        	this.csvFileBrowseButton.TabIndex = 6;
-        	this.csvFileBrowseButton.Text = "&Browse";
-        	this.csvFileBrowseButton.UseVisualStyleBackColor = true;
-        	this.csvFileBrowseButton.Click += new System.EventHandler(this.OnCsvFileBrowseButtonClick);
-        	// 
-        	// indexToolStripStatusLabel
-        	// 
-        	this.indexToolStripStatusLabel.Name = "indexToolStripStatusLabel";
-        	this.indexToolStripStatusLabel.Size = new System.Drawing.Size(38, 17);
-        	this.indexToolStripStatusLabel.Text = "Index:";
-        	// 
-        	// mainStatusStrip
-        	// 
-        	this.mainStatusStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-        	        	        	this.linesToolStripStatusLabel,
-        	        	        	this.lineCountToolStripStatusLabel,
-        	        	        	this.indexToolStripStatusLabel,
-        	        	        	this.indexCountToolStripStatusLabel});
-        	this.mainStatusStrip.Location = new System.Drawing.Point(0, 314);
-        	this.mainStatusStrip.Name = "mainStatusStrip";
-        	this.mainStatusStrip.Size = new System.Drawing.Size(288, 22);
-        	this.mainStatusStrip.SizingGrip = false;
-        	this.mainStatusStrip.TabIndex = 35;
-        	// 
-        	// linesToolStripStatusLabel
-        	// 
-        	this.linesToolStripStatusLabel.Name = "linesToolStripStatusLabel";
-        	this.linesToolStripStatusLabel.Size = new System.Drawing.Size(37, 17);
-        	this.linesToolStripStatusLabel.Text = "Lines:";
-        	// 
-        	// lineCountToolStripStatusLabel
-        	// 
-        	this.lineCountToolStripStatusLabel.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-        	this.lineCountToolStripStatusLabel.Name = "lineCountToolStripStatusLabel";
-        	this.lineCountToolStripStatusLabel.Size = new System.Drawing.Size(14, 17);
-        	this.lineCountToolStripStatusLabel.Text = "0";
-        	// 
-        	// indexCountToolStripStatusLabel
-        	// 
-        	this.indexCountToolStripStatusLabel.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-        	this.indexCountToolStripStatusLabel.Name = "indexCountToolStripStatusLabel";
-        	this.indexCountToolStripStatusLabel.Size = new System.Drawing.Size(14, 17);
-        	this.indexCountToolStripStatusLabel.Text = "0";
-        	// 
-        	// mainTableLayoutPanel
-        	// 
-        	this.mainTableLayoutPanel.ColumnCount = 2;
-        	this.mainTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-        	this.mainTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-        	this.mainTableLayoutPanel.Controls.Add(this.hotkeyCombinationLabel, 0, 0);
-        	this.mainTableLayoutPanel.Controls.Add(this.tableLayoutPanel1, 0, 1);
-        	this.mainTableLayoutPanel.Controls.Add(this.commandArgumentLabel, 0, 2);
-        	this.mainTableLayoutPanel.Controls.Add(this.tableLayoutPanel2, 0, 3);
-        	this.mainTableLayoutPanel.Controls.Add(this.csvLinesTextBox, 0, 4);
-        	this.mainTableLayoutPanel.Controls.Add(this.delayLabel, 0, 5);
-        	this.mainTableLayoutPanel.Controls.Add(this.label2, 0, 6);
-        	this.mainTableLayoutPanel.Controls.Add(this.label3, 0, 7);
-        	this.mainTableLayoutPanel.Controls.Add(this.label4, 0, 8);
-        	this.mainTableLayoutPanel.Controls.Add(this.delayComboBox, 1, 5);
-        	this.mainTableLayoutPanel.Controls.Add(this.commaTranslationTextBox, 1, 6);
-        	this.mainTableLayoutPanel.Controls.Add(this.newLineTranslationTextBox, 1, 7);
-        	this.mainTableLayoutPanel.Controls.Add(this.linesNumericUpDown, 1, 8);
-        	this.mainTableLayoutPanel.Controls.Add(this.activeRadioButton, 0, 9);
-        	this.mainTableLayoutPanel.Controls.Add(this.inactiveRadioButton, 1, 9);
-        	this.mainTableLayoutPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-        	this.mainTableLayoutPanel.Location = new System.Drawing.Point(0, 24);
-        	this.mainTableLayoutPanel.Name = "mainTableLayoutPanel";
-        	this.mainTableLayoutPanel.RowCount = 10;
-        	this.mainTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-        	this.mainTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
-        	this.mainTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-        	this.mainTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
-        	this.mainTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-        	this.mainTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 23F));
-        	this.mainTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 23F));
-        	this.mainTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 23F));
-        	this.mainTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 23F));
-        	this.mainTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 23F));
-        	this.mainTableLayoutPanel.Size = new System.Drawing.Size(288, 290);
-        	this.mainTableLayoutPanel.TabIndex = 37;
-        	// 
-        	// hotkeyCombinationLabel
-        	// 
-        	this.mainTableLayoutPanel.SetColumnSpan(this.hotkeyCombinationLabel, 2);
-        	this.hotkeyCombinationLabel.Dock = System.Windows.Forms.DockStyle.Fill;
-        	this.hotkeyCombinationLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-        	this.hotkeyCombinationLabel.Location = new System.Drawing.Point(3, 0);
-        	this.hotkeyCombinationLabel.Name = "hotkeyCombinationLabel";
-        	this.hotkeyCombinationLabel.Size = new System.Drawing.Size(282, 20);
-        	this.hotkeyCombinationLabel.TabIndex = 0;
-        	this.hotkeyCombinationLabel.Text = "&Hotkey combination:";
-        	this.hotkeyCombinationLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-        	// 
-        	// tableLayoutPanel1
-        	// 
-        	this.tableLayoutPanel1.ColumnCount = 4;
-        	this.mainTableLayoutPanel.SetColumnSpan(this.tableLayoutPanel1, 2);
-        	this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-        	this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-        	this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-        	this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-        	this.tableLayoutPanel1.Controls.Add(this.controlCheckBox, 0, 0);
-        	this.tableLayoutPanel1.Controls.Add(this.altCheckBox, 1, 0);
-        	this.tableLayoutPanel1.Controls.Add(this.shiftCheckBox, 2, 0);
-        	this.tableLayoutPanel1.Controls.Add(this.keyComboBox, 3, 0);
-        	this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-        	this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 20);
-        	this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(0);
-        	this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-        	this.tableLayoutPanel1.RowCount = 1;
-        	this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-        	this.tableLayoutPanel1.Size = new System.Drawing.Size(288, 25);
-        	this.tableLayoutPanel1.TabIndex = 3;
-        	// 
-        	// controlCheckBox
-        	// 
-        	this.controlCheckBox.Location = new System.Drawing.Point(3, 3);
-        	this.controlCheckBox.Name = "controlCheckBox";
-        	this.controlCheckBox.Size = new System.Drawing.Size(66, 19);
-        	this.controlCheckBox.TabIndex = 0;
-        	this.controlCheckBox.Text = "&CTRL";
-        	this.controlCheckBox.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-        	this.controlCheckBox.UseVisualStyleBackColor = true;
-        	// 
-        	// altCheckBox
-        	// 
-        	this.altCheckBox.Location = new System.Drawing.Point(75, 3);
-        	this.altCheckBox.Name = "altCheckBox";
-        	this.altCheckBox.Size = new System.Drawing.Size(66, 19);
-        	this.altCheckBox.TabIndex = 1;
-        	this.altCheckBox.Text = "&ALT";
-        	this.altCheckBox.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-        	this.altCheckBox.UseVisualStyleBackColor = true;
-        	// 
-        	// shiftCheckBox
-        	// 
-        	this.shiftCheckBox.Location = new System.Drawing.Point(147, 3);
-        	this.shiftCheckBox.Name = "shiftCheckBox";
-        	this.shiftCheckBox.Size = new System.Drawing.Size(66, 19);
-        	this.shiftCheckBox.TabIndex = 2;
-        	this.shiftCheckBox.Text = "&SHIFT";
-        	this.shiftCheckBox.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-        	this.shiftCheckBox.UseVisualStyleBackColor = true;
-        	// 
-        	// keyComboBox
-        	// 
-        	this.keyComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-        	this.keyComboBox.FormattingEnabled = true;
-        	this.keyComboBox.Location = new System.Drawing.Point(219, 3);
-        	this.keyComboBox.Name = "keyComboBox";
-        	this.keyComboBox.Size = new System.Drawing.Size(66, 21);
-        	this.keyComboBox.TabIndex = 3;
-        	// 
-        	// commandArgumentLabel
-        	// 
-        	this.mainTableLayoutPanel.SetColumnSpan(this.commandArgumentLabel, 2);
-        	this.commandArgumentLabel.Dock = System.Windows.Forms.DockStyle.Fill;
-        	this.commandArgumentLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-        	this.commandArgumentLabel.Location = new System.Drawing.Point(3, 45);
-        	this.commandArgumentLabel.Name = "commandArgumentLabel";
-        	this.commandArgumentLabel.Size = new System.Drawing.Size(282, 20);
-        	this.commandArgumentLabel.TabIndex = 4;
-        	this.commandArgumentLabel.Text = "CSV &file / input lines:";
-        	this.commandArgumentLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-        	// 
-        	// tableLayoutPanel2
-        	// 
-        	this.tableLayoutPanel2.ColumnCount = 2;
-        	this.mainTableLayoutPanel.SetColumnSpan(this.tableLayoutPanel2, 2);
-        	this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 75F));
-        	this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-        	this.tableLayoutPanel2.Controls.Add(this.csvFileBrowseButton, 1, 0);
-        	this.tableLayoutPanel2.Controls.Add(this.csvFileTextBox, 0, 0);
-        	this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
-        	this.tableLayoutPanel2.Location = new System.Drawing.Point(0, 65);
-        	this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(0);
-        	this.tableLayoutPanel2.Name = "tableLayoutPanel2";
-        	this.tableLayoutPanel2.RowCount = 1;
-        	this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-        	this.tableLayoutPanel2.Size = new System.Drawing.Size(288, 25);
-        	this.tableLayoutPanel2.TabIndex = 11;
-        	// 
-        	// csvFileTextBox
-        	// 
-        	this.csvFileTextBox.Dock = System.Windows.Forms.DockStyle.Fill;
-        	this.csvFileTextBox.Location = new System.Drawing.Point(3, 3);
-        	this.csvFileTextBox.Name = "csvFileTextBox";
-        	this.csvFileTextBox.Size = new System.Drawing.Size(210, 20);
-        	this.csvFileTextBox.TabIndex = 5;
-        	// 
-        	// csvLinesTextBox
-        	// 
-        	this.mainTableLayoutPanel.SetColumnSpan(this.csvLinesTextBox, 2);
-        	this.csvLinesTextBox.Dock = System.Windows.Forms.DockStyle.Fill;
-        	this.csvLinesTextBox.Location = new System.Drawing.Point(3, 93);
-        	this.csvLinesTextBox.Multiline = true;
-        	this.csvLinesTextBox.Name = "csvLinesTextBox";
-        	this.csvLinesTextBox.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-        	this.csvLinesTextBox.Size = new System.Drawing.Size(282, 79);
-        	this.csvLinesTextBox.TabIndex = 7;
-        	this.csvLinesTextBox.WordWrap = false;
-        	// 
-        	// delayLabel
-        	// 
-        	this.delayLabel.Dock = System.Windows.Forms.DockStyle.Fill;
-        	this.delayLabel.Location = new System.Drawing.Point(3, 175);
-        	this.delayLabel.Name = "delayLabel";
-        	this.delayLabel.Size = new System.Drawing.Size(138, 23);
-        	this.delayLabel.TabIndex = 8;
-        	this.delayLabel.Text = "&Delay (in milliseconds):";
-        	this.delayLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-        	// 
-        	// label2
-        	// 
-        	this.label2.Dock = System.Windows.Forms.DockStyle.Fill;
-        	this.label2.Location = new System.Drawing.Point(3, 198);
-        	this.label2.Name = "label2";
-        	this.label2.Size = new System.Drawing.Size(138, 23);
-        	this.label2.TabIndex = 10;
-        	this.label2.Text = "&Comma translates to:";
-        	this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-        	// 
-        	// label3
-        	// 
-        	this.label3.Dock = System.Windows.Forms.DockStyle.Fill;
-        	this.label3.Location = new System.Drawing.Point(3, 221);
-        	this.label3.Name = "label3";
-        	this.label3.Size = new System.Drawing.Size(138, 23);
-        	this.label3.TabIndex = 12;
-        	this.label3.Text = "&New line translates to:";
-        	this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-        	// 
-        	// label4
-        	// 
-        	this.label4.Dock = System.Windows.Forms.DockStyle.Fill;
-        	this.label4.Location = new System.Drawing.Point(3, 244);
-        	this.label4.Name = "label4";
-        	this.label4.Size = new System.Drawing.Size(138, 23);
-        	this.label4.TabIndex = 14;
-        	this.label4.Text = "&Lines per press (0 = all):";
-        	this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-        	// 
-        	// delayComboBox
-        	// 
-        	this.delayComboBox.Dock = System.Windows.Forms.DockStyle.Fill;
-        	this.delayComboBox.FormattingEnabled = true;
-        	this.delayComboBox.Items.AddRange(new object[] {
-        	        	        	"50",
-        	        	        	"75",
-        	        	        	"100",
-        	        	        	"150",
-        	        	        	"200",
-        	        	        	"250",
-        	        	        	"300",
-        	        	        	"400",
-        	        	        	"500",
-        	        	        	"600",
-        	        	        	"700",
-        	        	        	"800",
-        	        	        	"900",
-        	        	        	"1000"});
-        	this.delayComboBox.Location = new System.Drawing.Point(147, 178);
-        	this.delayComboBox.Name = "delayComboBox";
-        	this.delayComboBox.Size = new System.Drawing.Size(138, 21);
-        	this.delayComboBox.TabIndex = 9;
-        	this.delayComboBox.Text = "75";
-        	// 
-        	// commaTranslationTextBox
-        	// 
-        	this.commaTranslationTextBox.Dock = System.Windows.Forms.DockStyle.Fill;
-        	this.commaTranslationTextBox.Location = new System.Drawing.Point(147, 201);
-        	this.commaTranslationTextBox.Name = "commaTranslationTextBox";
-        	this.commaTranslationTextBox.Size = new System.Drawing.Size(138, 20);
-        	this.commaTranslationTextBox.TabIndex = 11;
-        	this.commaTranslationTextBox.Text = "{TAB}";
-        	// 
-        	// newLineTranslationTextBox
-        	// 
-        	this.newLineTranslationTextBox.Dock = System.Windows.Forms.DockStyle.Fill;
-        	this.newLineTranslationTextBox.Location = new System.Drawing.Point(147, 224);
-        	this.newLineTranslationTextBox.Name = "newLineTranslationTextBox";
-        	this.newLineTranslationTextBox.Size = new System.Drawing.Size(138, 20);
-        	this.newLineTranslationTextBox.TabIndex = 13;
-        	this.newLineTranslationTextBox.Text = "{ENTER}";
-        	// 
-        	// linesNumericUpDown
-        	// 
-        	this.linesNumericUpDown.Dock = System.Windows.Forms.DockStyle.Fill;
-        	this.linesNumericUpDown.Location = new System.Drawing.Point(147, 247);
-        	this.linesNumericUpDown.Maximum = new decimal(new int[] {
-        	        	        	100000000,
-        	        	        	0,
-        	        	        	0,
-        	        	        	0});
-        	this.linesNumericUpDown.Name = "linesNumericUpDown";
-        	this.linesNumericUpDown.Size = new System.Drawing.Size(138, 20);
-        	this.linesNumericUpDown.TabIndex = 15;
-        	// 
-        	// activeRadioButton
-        	// 
-        	this.activeRadioButton.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
-        	this.activeRadioButton.Dock = System.Windows.Forms.DockStyle.Fill;
-        	this.activeRadioButton.Location = new System.Drawing.Point(3, 270);
-        	this.activeRadioButton.Name = "activeRadioButton";
-        	this.activeRadioButton.Size = new System.Drawing.Size(138, 17);
-        	this.activeRadioButton.TabIndex = 16;
-        	this.activeRadioButton.TabStop = true;
-        	this.activeRadioButton.Text = "&Active";
-        	this.activeRadioButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-        	this.activeRadioButton.UseVisualStyleBackColor = true;
-        	this.activeRadioButton.CheckedChanged += new System.EventHandler(this.OnActiveRadioButtonCheckedChanged);
-        	// 
-        	// inactiveRadioButton
-        	// 
-        	this.inactiveRadioButton.Dock = System.Windows.Forms.DockStyle.Fill;
-        	this.inactiveRadioButton.Location = new System.Drawing.Point(147, 270);
-        	this.inactiveRadioButton.Name = "inactiveRadioButton";
-        	this.inactiveRadioButton.Size = new System.Drawing.Size(138, 17);
-        	this.inactiveRadioButton.TabIndex = 17;
-        	this.inactiveRadioButton.TabStop = true;
-        	this.inactiveRadioButton.Text = "&Inactive";
-        	this.inactiveRadioButton.UseVisualStyleBackColor = true;
-        	this.inactiveRadioButton.CheckedChanged += new System.EventHandler(this.OnInactiveRadioButtonCheckedChanged);
-        	// 
-        	// alwaysOnTopToolStripMenuItem
-        	// 
-        	this.alwaysOnTopToolStripMenuItem.Name = "alwaysOnTopToolStripMenuItem";
-        	this.alwaysOnTopToolStripMenuItem.Size = new System.Drawing.Size(149, 22);
-        	this.alwaysOnTopToolStripMenuItem.Text = "&Always on top";
-        	// 
-        	// optionsToolStripMenuItem
-        	// 
-        	this.optionsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-        	        	        	this.alwaysOnTopToolStripMenuItem});
-        	this.optionsToolStripMenuItem.Name = "optionsToolStripMenuItem";
-        	this.optionsToolStripMenuItem.Size = new System.Drawing.Size(61, 20);
-        	this.optionsToolStripMenuItem.Text = "&Options";
-        	this.optionsToolStripMenuItem.DropDownItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.OnOptionsToolStripMenuItemDropDownItemClicked);
-        	// 
-        	// minimizeToolStripMenuItem
-        	// 
-        	this.minimizeToolStripMenuItem.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-        	this.minimizeToolStripMenuItem.Name = "minimizeToolStripMenuItem";
-        	this.minimizeToolStripMenuItem.Size = new System.Drawing.Size(12, 20);
-        	this.minimizeToolStripMenuItem.Visible = false;
-        	// 
-        	// mainMenuStrip
-        	// 
-        	this.mainMenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-        	        	        	this.minimizeToolStripMenuItem,
-        	        	        	this.fileToolStripMenuItem,
-        	        	        	this.optionsToolStripMenuItem,
-        	        	        	this.helpToolStripMenuItem});
-        	this.mainMenuStrip.Location = new System.Drawing.Point(0, 0);
-        	this.mainMenuStrip.Name = "mainMenuStrip";
-        	this.mainMenuStrip.Size = new System.Drawing.Size(288, 24);
-        	this.mainMenuStrip.TabIndex = 36;
-        	// 
-        	// fileToolStripMenuItem
-        	// 
-        	this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-        	        	        	this.newToolStripMenuItem,
-        	        	        	this.openToolStripMenuItem,
-        	        	        	this.toolStripSeparator,
-        	        	        	this.saveToolStripMenuItem,
-        	        	        	this.saveAsToolStripMenuItem,
-        	        	        	this.toolStripSeparator1,
-        	        	        	this.printToolStripMenuItem,
-        	        	        	this.printPreviewToolStripMenuItem,
-        	        	        	this.toolStripSeparator3,
-        	        	        	this.exitToolStripMenuItem});
-        	this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
-        	this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
-        	this.fileToolStripMenuItem.Text = "&File";
-        	// 
-        	// newToolStripMenuItem
-        	// 
-        	this.newToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("newToolStripMenuItem.Image")));
-        	this.newToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Magenta;
-        	this.newToolStripMenuItem.Name = "newToolStripMenuItem";
-        	this.newToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.N)));
-        	this.newToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-        	this.newToolStripMenuItem.Text = "&New";
-        	this.newToolStripMenuItem.Click += new System.EventHandler(this.OnNewToolStripMenuItemClick);
-        	// 
-        	// openToolStripMenuItem
-        	// 
-        	this.openToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("openToolStripMenuItem.Image")));
-        	this.openToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Magenta;
-        	this.openToolStripMenuItem.Name = "openToolStripMenuItem";
-        	this.openToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.O)));
-        	this.openToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-        	this.openToolStripMenuItem.Text = "&Open";
-        	this.openToolStripMenuItem.Click += new System.EventHandler(this.OnCsvFileBrowseButtonClick);
-        	// 
-        	// toolStripSeparator
-        	// 
-        	this.toolStripSeparator.Name = "toolStripSeparator";
-        	this.toolStripSeparator.Size = new System.Drawing.Size(149, 6);
-        	this.toolStripSeparator.Visible = false;
-        	// 
-        	// saveToolStripMenuItem
-        	// 
-        	this.saveToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("saveToolStripMenuItem.Image")));
-        	this.saveToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Magenta;
-        	this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
-        	this.saveToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.S)));
-        	this.saveToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-        	this.saveToolStripMenuItem.Text = "&Save";
-        	this.saveToolStripMenuItem.Visible = false;
-        	// 
-        	// saveAsToolStripMenuItem
-        	// 
-        	this.saveAsToolStripMenuItem.Name = "saveAsToolStripMenuItem";
-        	this.saveAsToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-        	this.saveAsToolStripMenuItem.Text = "Save &As";
-        	this.saveAsToolStripMenuItem.Visible = false;
-        	// 
-        	// toolStripSeparator1
-        	// 
-        	this.toolStripSeparator1.Name = "toolStripSeparator1";
-        	this.toolStripSeparator1.Size = new System.Drawing.Size(149, 6);
-        	this.toolStripSeparator1.Visible = false;
-        	// 
-        	// printToolStripMenuItem
-        	// 
-        	this.printToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("printToolStripMenuItem.Image")));
-        	this.printToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Magenta;
-        	this.printToolStripMenuItem.Name = "printToolStripMenuItem";
-        	this.printToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.P)));
-        	this.printToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-        	this.printToolStripMenuItem.Text = "&Print";
-        	this.printToolStripMenuItem.Visible = false;
-        	// 
-        	// printPreviewToolStripMenuItem
-        	// 
-        	this.printPreviewToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("printPreviewToolStripMenuItem.Image")));
-        	this.printPreviewToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Magenta;
-        	this.printPreviewToolStripMenuItem.Name = "printPreviewToolStripMenuItem";
-        	this.printPreviewToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-        	this.printPreviewToolStripMenuItem.Text = "Print Pre&view";
-        	this.printPreviewToolStripMenuItem.Visible = false;
-        	// 
-        	// toolStripSeparator3
-        	// 
-        	this.toolStripSeparator3.Name = "toolStripSeparator3";
-        	this.toolStripSeparator3.Size = new System.Drawing.Size(149, 6);
-        	// 
-        	// exitToolStripMenuItem
-        	// 
-        	this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-        	this.exitToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-        	this.exitToolStripMenuItem.Text = "E&xit";
-        	this.exitToolStripMenuItem.Click += new System.EventHandler(this.OnExitToolStripMenuItemClick);
-        	// 
-        	// helpToolStripMenuItem
-        	// 
-        	this.helpToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-        	        	        	this.weeklyReleasesPublicDomainWeeklycomToolStripMenuItem,
-        	        	        	this.originalThreadDonationCodercomToolStripMenuItem,
-        	        	        	this.sourceCodeGithubcomToolStripMenuItem,
-        	        	        	this.toolStripSeparator2,
-        	        	        	this.aboutToolStripMenuItem});
-        	this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
-        	this.helpToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
-        	this.helpToolStripMenuItem.Text = "&Help";
-        	// 
-        	// weeklyReleasesPublicDomainWeeklycomToolStripMenuItem
-        	// 
-        	this.weeklyReleasesPublicDomainWeeklycomToolStripMenuItem.Name = "weeklyReleasesPublicDomainWeeklycomToolStripMenuItem";
-        	this.weeklyReleasesPublicDomainWeeklycomToolStripMenuItem.Size = new System.Drawing.Size(313, 22);
-        	this.weeklyReleasesPublicDomainWeeklycomToolStripMenuItem.Text = "&Weekly releases @ PublicDomainWeekly.com";
-        	this.weeklyReleasesPublicDomainWeeklycomToolStripMenuItem.Click += new System.EventHandler(this.OnWeeklyReleasesPublicDomainWeeklycomToolStripMenuItemClick);
-        	// 
-        	// originalThreadDonationCodercomToolStripMenuItem
-        	// 
-        	this.originalThreadDonationCodercomToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("originalThreadDonationCodercomToolStripMenuItem.Image")));
-        	this.originalThreadDonationCodercomToolStripMenuItem.Name = "originalThreadDonationCodercomToolStripMenuItem";
-        	this.originalThreadDonationCodercomToolStripMenuItem.Size = new System.Drawing.Size(313, 22);
-        	this.originalThreadDonationCodercomToolStripMenuItem.Text = "&Original thread @ DonationCoder.com";
-        	this.originalThreadDonationCodercomToolStripMenuItem.Click += new System.EventHandler(this.OnOriginalThreadDonationCodercomToolStripMenuItemClick);
-        	// 
-        	// sourceCodeGithubcomToolStripMenuItem
-        	// 
-        	this.sourceCodeGithubcomToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("sourceCodeGithubcomToolStripMenuItem.Image")));
-        	this.sourceCodeGithubcomToolStripMenuItem.Name = "sourceCodeGithubcomToolStripMenuItem";
-        	this.sourceCodeGithubcomToolStripMenuItem.Size = new System.Drawing.Size(313, 22);
-        	this.sourceCodeGithubcomToolStripMenuItem.Text = "Source code @ Github.com";
-        	this.sourceCodeGithubcomToolStripMenuItem.Click += new System.EventHandler(this.OnSourceCodeGithubcomToolStripMenuItemClick);
-        	// 
-        	// toolStripSeparator2
-        	// 
-        	this.toolStripSeparator2.Name = "toolStripSeparator2";
-        	this.toolStripSeparator2.Size = new System.Drawing.Size(310, 6);
-        	// 
-        	// aboutToolStripMenuItem
-        	// 
-        	this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-        	this.aboutToolStripMenuItem.Size = new System.Drawing.Size(313, 22);
-        	this.aboutToolStripMenuItem.Text = "&About...";
-        	this.aboutToolStripMenuItem.Click += new System.EventHandler(this.OnAboutToolStripMenuItemClick);
-        	// 
-        	// openFileDialog
-        	// 
-        	this.openFileDialog.DefaultExt = "txt";
-        	this.openFileDialog.Filter = "TXT files (*.txt)|*.txt|CSV files (*.csv)|*.csv|All files (*.*)|*.*\"";
-        	// 
-        	// MainForm
-        	// 
-        	this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-        	this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-        	this.ClientSize = new System.Drawing.Size(288, 336);
-        	this.Controls.Add(this.mainTableLayoutPanel);
-        	this.Controls.Add(this.mainStatusStrip);
-        	this.Controls.Add(this.mainMenuStrip);
-        	this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-        	this.Name = "MainForm";
-        	this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-        	this.Text = "csv2key";
-        	this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.OnMainFormFormClosing);
-        	this.Load += new System.EventHandler(this.OnMainFormLoad);
-        	this.mainStatusStrip.ResumeLayout(false);
-        	this.mainStatusStrip.PerformLayout();
-        	this.mainTableLayoutPanel.ResumeLayout(false);
-        	this.mainTableLayoutPanel.PerformLayout();
-        	this.tableLayoutPanel1.ResumeLayout(false);
-        	this.tableLayoutPanel2.ResumeLayout(false);
-        	this.tableLayoutPanel2.PerformLayout();
-        	((System.ComponentModel.ISupportInitialize)(this.linesNumericUpDown)).EndInit();
-        	this.mainMenuStrip.ResumeLayout(false);
-        	this.mainMenuStrip.PerformLayout();
-        	this.ResumeLayout(false);
-        	this.PerformLayout();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
+            this.csvFileBrowseButton = new System.Windows.Forms.Button();
+            this.indexToolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
+            this.mainStatusStrip = new System.Windows.Forms.StatusStrip();
+            this.linesToolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
+            this.lineCountToolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
+            this.indexCountToolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
+            this.mainTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
+            this.hotkeyCombinationLabel = new System.Windows.Forms.Label();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.controlCheckBox = new System.Windows.Forms.CheckBox();
+            this.altCheckBox = new System.Windows.Forms.CheckBox();
+            this.shiftCheckBox = new System.Windows.Forms.CheckBox();
+            this.keyComboBox = new System.Windows.Forms.ComboBox();
+            this.commandArgumentLabel = new System.Windows.Forms.Label();
+            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.csvFileTextBox = new System.Windows.Forms.TextBox();
+            this.csvLinesTextBox = new System.Windows.Forms.TextBox();
+            this.delayLabel = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.delayComboBox = new System.Windows.Forms.ComboBox();
+            this.commaTranslationTextBox = new System.Windows.Forms.TextBox();
+            this.newLineTranslationTextBox = new System.Windows.Forms.TextBox();
+            this.linesNumericUpDown = new System.Windows.Forms.NumericUpDown();
+            this.activeRadioButton = new System.Windows.Forms.RadioButton();
+            this.inactiveRadioButton = new System.Windows.Forms.RadioButton();
+            this.alwaysOnTopToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.optionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.minimizeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.mainMenuStrip = new System.Windows.Forms.MenuStrip();
+            this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.newToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.openToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator = new System.Windows.Forms.ToolStripSeparator();
+            this.saveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.saveAsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.printToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.printPreviewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
+            this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.weeklyReleasesPublicDomainWeeklycomToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.originalThreadDonationCodercomToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.sourceCodeGithubcomToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
+            this.mainStatusStrip.SuspendLayout();
+            this.mainTableLayoutPanel.SuspendLayout();
+            this.tableLayoutPanel1.SuspendLayout();
+            this.tableLayoutPanel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.linesNumericUpDown)).BeginInit();
+            this.mainMenuStrip.SuspendLayout();
+            this.SuspendLayout();
+            // 
+            // csvFileBrowseButton
+            // 
+            this.csvFileBrowseButton.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.csvFileBrowseButton.Location = new System.Drawing.Point(219, 1);
+            this.csvFileBrowseButton.Margin = new System.Windows.Forms.Padding(3, 1, 3, 1);
+            this.csvFileBrowseButton.Name = "csvFileBrowseButton";
+            this.csvFileBrowseButton.Size = new System.Drawing.Size(66, 23);
+            this.csvFileBrowseButton.TabIndex = 6;
+            this.csvFileBrowseButton.Text = "&Browse";
+            this.csvFileBrowseButton.UseVisualStyleBackColor = true;
+            this.csvFileBrowseButton.Click += new System.EventHandler(this.OnCsvFileBrowseButtonClick);
+            // 
+            // indexToolStripStatusLabel
+            // 
+            this.indexToolStripStatusLabel.Name = "indexToolStripStatusLabel";
+            this.indexToolStripStatusLabel.Size = new System.Drawing.Size(38, 17);
+            this.indexToolStripStatusLabel.Text = "Index:";
+            // 
+            // mainStatusStrip
+            // 
+            this.mainStatusStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+                                    this.linesToolStripStatusLabel,
+                                    this.lineCountToolStripStatusLabel,
+                                    this.indexToolStripStatusLabel,
+                                    this.indexCountToolStripStatusLabel});
+            this.mainStatusStrip.Location = new System.Drawing.Point(0, 314);
+            this.mainStatusStrip.Name = "mainStatusStrip";
+            this.mainStatusStrip.Size = new System.Drawing.Size(288, 22);
+            this.mainStatusStrip.SizingGrip = false;
+            this.mainStatusStrip.TabIndex = 35;
+            // 
+            // linesToolStripStatusLabel
+            // 
+            this.linesToolStripStatusLabel.Name = "linesToolStripStatusLabel";
+            this.linesToolStripStatusLabel.Size = new System.Drawing.Size(37, 17);
+            this.linesToolStripStatusLabel.Text = "Lines:";
+            // 
+            // lineCountToolStripStatusLabel
+            // 
+            this.lineCountToolStripStatusLabel.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.lineCountToolStripStatusLabel.Name = "lineCountToolStripStatusLabel";
+            this.lineCountToolStripStatusLabel.Size = new System.Drawing.Size(14, 17);
+            this.lineCountToolStripStatusLabel.Text = "0";
+            // 
+            // indexCountToolStripStatusLabel
+            // 
+            this.indexCountToolStripStatusLabel.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.indexCountToolStripStatusLabel.Name = "indexCountToolStripStatusLabel";
+            this.indexCountToolStripStatusLabel.Size = new System.Drawing.Size(14, 17);
+            this.indexCountToolStripStatusLabel.Text = "0";
+            // 
+            // mainTableLayoutPanel
+            // 
+            this.mainTableLayoutPanel.ColumnCount = 2;
+            this.mainTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.mainTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.mainTableLayoutPanel.Controls.Add(this.hotkeyCombinationLabel, 0, 0);
+            this.mainTableLayoutPanel.Controls.Add(this.tableLayoutPanel1, 0, 1);
+            this.mainTableLayoutPanel.Controls.Add(this.commandArgumentLabel, 0, 2);
+            this.mainTableLayoutPanel.Controls.Add(this.tableLayoutPanel2, 0, 3);
+            this.mainTableLayoutPanel.Controls.Add(this.csvLinesTextBox, 0, 4);
+            this.mainTableLayoutPanel.Controls.Add(this.delayLabel, 0, 5);
+            this.mainTableLayoutPanel.Controls.Add(this.label2, 0, 6);
+            this.mainTableLayoutPanel.Controls.Add(this.label3, 0, 7);
+            this.mainTableLayoutPanel.Controls.Add(this.label4, 0, 8);
+            this.mainTableLayoutPanel.Controls.Add(this.delayComboBox, 1, 5);
+            this.mainTableLayoutPanel.Controls.Add(this.commaTranslationTextBox, 1, 6);
+            this.mainTableLayoutPanel.Controls.Add(this.newLineTranslationTextBox, 1, 7);
+            this.mainTableLayoutPanel.Controls.Add(this.linesNumericUpDown, 1, 8);
+            this.mainTableLayoutPanel.Controls.Add(this.activeRadioButton, 0, 9);
+            this.mainTableLayoutPanel.Controls.Add(this.inactiveRadioButton, 1, 9);
+            this.mainTableLayoutPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.mainTableLayoutPanel.Location = new System.Drawing.Point(0, 24);
+            this.mainTableLayoutPanel.Name = "mainTableLayoutPanel";
+            this.mainTableLayoutPanel.RowCount = 10;
+            this.mainTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.mainTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
+            this.mainTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.mainTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
+            this.mainTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.mainTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 23F));
+            this.mainTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 23F));
+            this.mainTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 23F));
+            this.mainTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 23F));
+            this.mainTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 23F));
+            this.mainTableLayoutPanel.Size = new System.Drawing.Size(288, 290);
+            this.mainTableLayoutPanel.TabIndex = 37;
+            // 
+            // hotkeyCombinationLabel
+            // 
+            this.mainTableLayoutPanel.SetColumnSpan(this.hotkeyCombinationLabel, 2);
+            this.hotkeyCombinationLabel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.hotkeyCombinationLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.hotkeyCombinationLabel.Location = new System.Drawing.Point(3, 0);
+            this.hotkeyCombinationLabel.Name = "hotkeyCombinationLabel";
+            this.hotkeyCombinationLabel.Size = new System.Drawing.Size(282, 20);
+            this.hotkeyCombinationLabel.TabIndex = 0;
+            this.hotkeyCombinationLabel.Text = "&Hotkey combination:";
+            this.hotkeyCombinationLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // tableLayoutPanel1
+            // 
+            this.tableLayoutPanel1.ColumnCount = 4;
+            this.mainTableLayoutPanel.SetColumnSpan(this.tableLayoutPanel1, 2);
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel1.Controls.Add(this.controlCheckBox, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.altCheckBox, 1, 0);
+            this.tableLayoutPanel1.Controls.Add(this.shiftCheckBox, 2, 0);
+            this.tableLayoutPanel1.Controls.Add(this.keyComboBox, 3, 0);
+            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 20);
+            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(0);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel1.RowCount = 1;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(288, 25);
+            this.tableLayoutPanel1.TabIndex = 3;
+            // 
+            // controlCheckBox
+            // 
+            this.controlCheckBox.Location = new System.Drawing.Point(3, 3);
+            this.controlCheckBox.Name = "controlCheckBox";
+            this.controlCheckBox.Size = new System.Drawing.Size(66, 19);
+            this.controlCheckBox.TabIndex = 0;
+            this.controlCheckBox.Text = "&CTRL";
+            this.controlCheckBox.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.controlCheckBox.UseVisualStyleBackColor = true;
+            this.controlCheckBox.CheckedChanged += new System.EventHandler(this.OnCheckBoxCheckedChanged);
+            // 
+            // altCheckBox
+            // 
+            this.altCheckBox.Location = new System.Drawing.Point(75, 3);
+            this.altCheckBox.Name = "altCheckBox";
+            this.altCheckBox.Size = new System.Drawing.Size(66, 19);
+            this.altCheckBox.TabIndex = 1;
+            this.altCheckBox.Text = "&ALT";
+            this.altCheckBox.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.altCheckBox.UseVisualStyleBackColor = true;
+            this.altCheckBox.CheckedChanged += new System.EventHandler(this.OnCheckBoxCheckedChanged);
+            // 
+            // shiftCheckBox
+            // 
+            this.shiftCheckBox.Location = new System.Drawing.Point(147, 3);
+            this.shiftCheckBox.Name = "shiftCheckBox";
+            this.shiftCheckBox.Size = new System.Drawing.Size(66, 19);
+            this.shiftCheckBox.TabIndex = 2;
+            this.shiftCheckBox.Text = "&SHIFT";
+            this.shiftCheckBox.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.shiftCheckBox.UseVisualStyleBackColor = true;
+            this.shiftCheckBox.CheckedChanged += new System.EventHandler(this.OnCsvLinesTextBoxTextChanged);
+            // 
+            // keyComboBox
+            // 
+            this.keyComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.keyComboBox.FormattingEnabled = true;
+            this.keyComboBox.Location = new System.Drawing.Point(219, 3);
+            this.keyComboBox.Name = "keyComboBox";
+            this.keyComboBox.Size = new System.Drawing.Size(66, 21);
+            this.keyComboBox.TabIndex = 3;
+            this.keyComboBox.SelectedIndexChanged += new System.EventHandler(this.OnCheckBoxCheckedChanged);
+            // 
+            // commandArgumentLabel
+            // 
+            this.mainTableLayoutPanel.SetColumnSpan(this.commandArgumentLabel, 2);
+            this.commandArgumentLabel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.commandArgumentLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.commandArgumentLabel.Location = new System.Drawing.Point(3, 45);
+            this.commandArgumentLabel.Name = "commandArgumentLabel";
+            this.commandArgumentLabel.Size = new System.Drawing.Size(282, 20);
+            this.commandArgumentLabel.TabIndex = 4;
+            this.commandArgumentLabel.Text = "CSV &file / input lines:";
+            this.commandArgumentLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // tableLayoutPanel2
+            // 
+            this.tableLayoutPanel2.ColumnCount = 2;
+            this.mainTableLayoutPanel.SetColumnSpan(this.tableLayoutPanel2, 2);
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 75F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel2.Controls.Add(this.csvFileBrowseButton, 1, 0);
+            this.tableLayoutPanel2.Controls.Add(this.csvFileTextBox, 0, 0);
+            this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(0, 65);
+            this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(0);
+            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
+            this.tableLayoutPanel2.RowCount = 1;
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(288, 25);
+            this.tableLayoutPanel2.TabIndex = 11;
+            // 
+            // csvFileTextBox
+            // 
+            this.csvFileTextBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.csvFileTextBox.Location = new System.Drawing.Point(3, 3);
+            this.csvFileTextBox.Name = "csvFileTextBox";
+            this.csvFileTextBox.Size = new System.Drawing.Size(210, 20);
+            this.csvFileTextBox.TabIndex = 5;
+            // 
+            // csvLinesTextBox
+            // 
+            this.mainTableLayoutPanel.SetColumnSpan(this.csvLinesTextBox, 2);
+            this.csvLinesTextBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.csvLinesTextBox.Location = new System.Drawing.Point(3, 93);
+            this.csvLinesTextBox.Multiline = true;
+            this.csvLinesTextBox.Name = "csvLinesTextBox";
+            this.csvLinesTextBox.ScrollBars = System.Windows.Forms.ScrollBars.Both;
+            this.csvLinesTextBox.Size = new System.Drawing.Size(282, 79);
+            this.csvLinesTextBox.TabIndex = 7;
+            this.csvLinesTextBox.WordWrap = false;
+            this.csvLinesTextBox.TextChanged += new System.EventHandler(this.OnCsvLinesTextBoxTextChanged);
+            // 
+            // delayLabel
+            // 
+            this.delayLabel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.delayLabel.Location = new System.Drawing.Point(3, 175);
+            this.delayLabel.Name = "delayLabel";
+            this.delayLabel.Size = new System.Drawing.Size(138, 23);
+            this.delayLabel.TabIndex = 8;
+            this.delayLabel.Text = "&Delay (in milliseconds):";
+            this.delayLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // label2
+            // 
+            this.label2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label2.Location = new System.Drawing.Point(3, 198);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(138, 23);
+            this.label2.TabIndex = 10;
+            this.label2.Text = "&Comma translates to:";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // label3
+            // 
+            this.label3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label3.Location = new System.Drawing.Point(3, 221);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(138, 23);
+            this.label3.TabIndex = 12;
+            this.label3.Text = "&New line translates to:";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // label4
+            // 
+            this.label4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label4.Location = new System.Drawing.Point(3, 244);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(138, 23);
+            this.label4.TabIndex = 14;
+            this.label4.Text = "&Lines per press (0 = all):";
+            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // delayComboBox
+            // 
+            this.delayComboBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.delayComboBox.FormattingEnabled = true;
+            this.delayComboBox.Items.AddRange(new object[] {
+                                    "50",
+                                    "75",
+                                    "100",
+                                    "150",
+                                    "200",
+                                    "250",
+                                    "300",
+                                    "400",
+                                    "500",
+                                    "600",
+                                    "700",
+                                    "800",
+                                    "900",
+                                    "1000"});
+            this.delayComboBox.Location = new System.Drawing.Point(147, 178);
+            this.delayComboBox.Name = "delayComboBox";
+            this.delayComboBox.Size = new System.Drawing.Size(138, 21);
+            this.delayComboBox.TabIndex = 9;
+            this.delayComboBox.Text = "75";
+            // 
+            // commaTranslationTextBox
+            // 
+            this.commaTranslationTextBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.commaTranslationTextBox.Location = new System.Drawing.Point(147, 201);
+            this.commaTranslationTextBox.Name = "commaTranslationTextBox";
+            this.commaTranslationTextBox.Size = new System.Drawing.Size(138, 20);
+            this.commaTranslationTextBox.TabIndex = 11;
+            this.commaTranslationTextBox.Text = "{TAB}";
+            // 
+            // newLineTranslationTextBox
+            // 
+            this.newLineTranslationTextBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.newLineTranslationTextBox.Location = new System.Drawing.Point(147, 224);
+            this.newLineTranslationTextBox.Name = "newLineTranslationTextBox";
+            this.newLineTranslationTextBox.Size = new System.Drawing.Size(138, 20);
+            this.newLineTranslationTextBox.TabIndex = 13;
+            this.newLineTranslationTextBox.Text = "{ENTER}";
+            // 
+            // linesNumericUpDown
+            // 
+            this.linesNumericUpDown.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.linesNumericUpDown.Location = new System.Drawing.Point(147, 247);
+            this.linesNumericUpDown.Maximum = new decimal(new int[] {
+                                    100000000,
+                                    0,
+                                    0,
+                                    0});
+            this.linesNumericUpDown.Name = "linesNumericUpDown";
+            this.linesNumericUpDown.Size = new System.Drawing.Size(138, 20);
+            this.linesNumericUpDown.TabIndex = 15;
+            // 
+            // activeRadioButton
+            // 
+            this.activeRadioButton.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.activeRadioButton.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.activeRadioButton.Location = new System.Drawing.Point(3, 270);
+            this.activeRadioButton.Name = "activeRadioButton";
+            this.activeRadioButton.Size = new System.Drawing.Size(138, 17);
+            this.activeRadioButton.TabIndex = 16;
+            this.activeRadioButton.TabStop = true;
+            this.activeRadioButton.Text = "&Active";
+            this.activeRadioButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.activeRadioButton.UseVisualStyleBackColor = true;
+            this.activeRadioButton.CheckedChanged += new System.EventHandler(this.OnActiveRadioButtonCheckedChanged);
+            // 
+            // inactiveRadioButton
+            // 
+            this.inactiveRadioButton.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.inactiveRadioButton.Location = new System.Drawing.Point(147, 270);
+            this.inactiveRadioButton.Name = "inactiveRadioButton";
+            this.inactiveRadioButton.Size = new System.Drawing.Size(138, 17);
+            this.inactiveRadioButton.TabIndex = 17;
+            this.inactiveRadioButton.TabStop = true;
+            this.inactiveRadioButton.Text = "&Inactive";
+            this.inactiveRadioButton.UseVisualStyleBackColor = true;
+            this.inactiveRadioButton.CheckedChanged += new System.EventHandler(this.OnInactiveRadioButtonCheckedChanged);
+            // 
+            // alwaysOnTopToolStripMenuItem
+            // 
+            this.alwaysOnTopToolStripMenuItem.Name = "alwaysOnTopToolStripMenuItem";
+            this.alwaysOnTopToolStripMenuItem.Size = new System.Drawing.Size(149, 22);
+            this.alwaysOnTopToolStripMenuItem.Text = "&Always on top";
+            // 
+            // optionsToolStripMenuItem
+            // 
+            this.optionsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+                                    this.alwaysOnTopToolStripMenuItem});
+            this.optionsToolStripMenuItem.Name = "optionsToolStripMenuItem";
+            this.optionsToolStripMenuItem.Size = new System.Drawing.Size(61, 20);
+            this.optionsToolStripMenuItem.Text = "&Options";
+            this.optionsToolStripMenuItem.DropDownItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.OnOptionsToolStripMenuItemDropDownItemClicked);
+            // 
+            // minimizeToolStripMenuItem
+            // 
+            this.minimizeToolStripMenuItem.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.minimizeToolStripMenuItem.Name = "minimizeToolStripMenuItem";
+            this.minimizeToolStripMenuItem.Size = new System.Drawing.Size(12, 20);
+            this.minimizeToolStripMenuItem.Visible = false;
+            // 
+            // mainMenuStrip
+            // 
+            this.mainMenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+                                    this.minimizeToolStripMenuItem,
+                                    this.fileToolStripMenuItem,
+                                    this.optionsToolStripMenuItem,
+                                    this.helpToolStripMenuItem});
+            this.mainMenuStrip.Location = new System.Drawing.Point(0, 0);
+            this.mainMenuStrip.Name = "mainMenuStrip";
+            this.mainMenuStrip.Size = new System.Drawing.Size(288, 24);
+            this.mainMenuStrip.TabIndex = 36;
+            // 
+            // fileToolStripMenuItem
+            // 
+            this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+                                    this.newToolStripMenuItem,
+                                    this.openToolStripMenuItem,
+                                    this.toolStripSeparator,
+                                    this.saveToolStripMenuItem,
+                                    this.saveAsToolStripMenuItem,
+                                    this.toolStripSeparator1,
+                                    this.printToolStripMenuItem,
+                                    this.printPreviewToolStripMenuItem,
+                                    this.toolStripSeparator3,
+                                    this.exitToolStripMenuItem});
+            this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
+            this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
+            this.fileToolStripMenuItem.Text = "&File";
+            // 
+            // newToolStripMenuItem
+            // 
+            this.newToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("newToolStripMenuItem.Image")));
+            this.newToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.newToolStripMenuItem.Name = "newToolStripMenuItem";
+            this.newToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.N)));
+            this.newToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
+            this.newToolStripMenuItem.Text = "&New";
+            this.newToolStripMenuItem.Click += new System.EventHandler(this.OnNewToolStripMenuItemClick);
+            // 
+            // openToolStripMenuItem
+            // 
+            this.openToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("openToolStripMenuItem.Image")));
+            this.openToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.openToolStripMenuItem.Name = "openToolStripMenuItem";
+            this.openToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.O)));
+            this.openToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
+            this.openToolStripMenuItem.Text = "&Open";
+            this.openToolStripMenuItem.Click += new System.EventHandler(this.OnCsvFileBrowseButtonClick);
+            // 
+            // toolStripSeparator
+            // 
+            this.toolStripSeparator.Name = "toolStripSeparator";
+            this.toolStripSeparator.Size = new System.Drawing.Size(143, 6);
+            this.toolStripSeparator.Visible = false;
+            // 
+            // saveToolStripMenuItem
+            // 
+            this.saveToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("saveToolStripMenuItem.Image")));
+            this.saveToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
+            this.saveToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.S)));
+            this.saveToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
+            this.saveToolStripMenuItem.Text = "&Save";
+            this.saveToolStripMenuItem.Visible = false;
+            // 
+            // saveAsToolStripMenuItem
+            // 
+            this.saveAsToolStripMenuItem.Name = "saveAsToolStripMenuItem";
+            this.saveAsToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
+            this.saveAsToolStripMenuItem.Text = "Save &As";
+            this.saveAsToolStripMenuItem.Visible = false;
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(143, 6);
+            this.toolStripSeparator1.Visible = false;
+            // 
+            // printToolStripMenuItem
+            // 
+            this.printToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("printToolStripMenuItem.Image")));
+            this.printToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.printToolStripMenuItem.Name = "printToolStripMenuItem";
+            this.printToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.P)));
+            this.printToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
+            this.printToolStripMenuItem.Text = "&Print";
+            this.printToolStripMenuItem.Visible = false;
+            // 
+            // printPreviewToolStripMenuItem
+            // 
+            this.printPreviewToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("printPreviewToolStripMenuItem.Image")));
+            this.printPreviewToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.printPreviewToolStripMenuItem.Name = "printPreviewToolStripMenuItem";
+            this.printPreviewToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
+            this.printPreviewToolStripMenuItem.Text = "Print Pre&view";
+            this.printPreviewToolStripMenuItem.Visible = false;
+            // 
+            // toolStripSeparator3
+            // 
+            this.toolStripSeparator3.Name = "toolStripSeparator3";
+            this.toolStripSeparator3.Size = new System.Drawing.Size(143, 6);
+            // 
+            // exitToolStripMenuItem
+            // 
+            this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
+            this.exitToolStripMenuItem.Text = "E&xit";
+            this.exitToolStripMenuItem.Click += new System.EventHandler(this.OnExitToolStripMenuItemClick);
+            // 
+            // helpToolStripMenuItem
+            // 
+            this.helpToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+                                    this.weeklyReleasesPublicDomainWeeklycomToolStripMenuItem,
+                                    this.originalThreadDonationCodercomToolStripMenuItem,
+                                    this.sourceCodeGithubcomToolStripMenuItem,
+                                    this.toolStripSeparator2,
+                                    this.aboutToolStripMenuItem});
+            this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
+            this.helpToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
+            this.helpToolStripMenuItem.Text = "&Help";
+            // 
+            // weeklyReleasesPublicDomainWeeklycomToolStripMenuItem
+            // 
+            this.weeklyReleasesPublicDomainWeeklycomToolStripMenuItem.Name = "weeklyReleasesPublicDomainWeeklycomToolStripMenuItem";
+            this.weeklyReleasesPublicDomainWeeklycomToolStripMenuItem.Size = new System.Drawing.Size(313, 22);
+            this.weeklyReleasesPublicDomainWeeklycomToolStripMenuItem.Text = "&Weekly releases @ PublicDomainWeekly.com";
+            this.weeklyReleasesPublicDomainWeeklycomToolStripMenuItem.Click += new System.EventHandler(this.OnWeeklyReleasesPublicDomainWeeklycomToolStripMenuItemClick);
+            // 
+            // originalThreadDonationCodercomToolStripMenuItem
+            // 
+            this.originalThreadDonationCodercomToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("originalThreadDonationCodercomToolStripMenuItem.Image")));
+            this.originalThreadDonationCodercomToolStripMenuItem.Name = "originalThreadDonationCodercomToolStripMenuItem";
+            this.originalThreadDonationCodercomToolStripMenuItem.Size = new System.Drawing.Size(313, 22);
+            this.originalThreadDonationCodercomToolStripMenuItem.Text = "&Original thread @ DonationCoder.com";
+            this.originalThreadDonationCodercomToolStripMenuItem.Click += new System.EventHandler(this.OnOriginalThreadDonationCodercomToolStripMenuItemClick);
+            // 
+            // sourceCodeGithubcomToolStripMenuItem
+            // 
+            this.sourceCodeGithubcomToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("sourceCodeGithubcomToolStripMenuItem.Image")));
+            this.sourceCodeGithubcomToolStripMenuItem.Name = "sourceCodeGithubcomToolStripMenuItem";
+            this.sourceCodeGithubcomToolStripMenuItem.Size = new System.Drawing.Size(313, 22);
+            this.sourceCodeGithubcomToolStripMenuItem.Text = "Source code @ Github.com";
+            this.sourceCodeGithubcomToolStripMenuItem.Click += new System.EventHandler(this.OnSourceCodeGithubcomToolStripMenuItemClick);
+            // 
+            // toolStripSeparator2
+            // 
+            this.toolStripSeparator2.Name = "toolStripSeparator2";
+            this.toolStripSeparator2.Size = new System.Drawing.Size(310, 6);
+            // 
+            // aboutToolStripMenuItem
+            // 
+            this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(313, 22);
+            this.aboutToolStripMenuItem.Text = "&About...";
+            this.aboutToolStripMenuItem.Click += new System.EventHandler(this.OnAboutToolStripMenuItemClick);
+            // 
+            // openFileDialog
+            // 
+            this.openFileDialog.DefaultExt = "txt";
+            this.openFileDialog.Filter = "TXT files (*.txt)|*.txt|CSV files (*.csv)|*.csv|All files (*.*)|*.*\"";
+            // 
+            // MainForm
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(288, 336);
+            this.Controls.Add(this.mainTableLayoutPanel);
+            this.Controls.Add(this.mainStatusStrip);
+            this.Controls.Add(this.mainMenuStrip);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Name = "MainForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "csv2key";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.OnMainFormFormClosing);
+            this.Load += new System.EventHandler(this.OnMainFormLoad);
+            this.mainStatusStrip.ResumeLayout(false);
+            this.mainStatusStrip.PerformLayout();
+            this.mainTableLayoutPanel.ResumeLayout(false);
+            this.mainTableLayoutPanel.PerformLayout();
+            this.tableLayoutPanel1.ResumeLayout(false);
+            this.tableLayoutPanel2.ResumeLayout(false);
+            this.tableLayoutPanel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.linesNumericUpDown)).EndInit();
+            this.mainMenuStrip.ResumeLayout(false);
+            this.mainMenuStrip.PerformLayout();
+            this.ResumeLayout(false);
+            this.PerformLayout();
         }
         private System.Windows.Forms.OpenFileDialog openFileDialog;
         private System.Windows.Forms.RadioButton inactiveRadioButton;

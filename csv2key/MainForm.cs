@@ -134,7 +134,7 @@ namespace csv2key
                     this.csvFileTextBox.Text = this.openFileDialog.FileName;
 
                     // Set CSV text 
-                    this.csvLinesTextBox.Text = File.ReadAllText(this.openFileDialog.FileName);
+                    this.csvLinesTextBox.Lines = File.ReadAllLines(this.openFileDialog.FileName);
                 }
                 catch (Exception exception)
                 {
@@ -229,7 +229,14 @@ namespace csv2key
             // Check for hotkey press
             if (m.Msg == WM_HOTKEY)
             {
-                // TODO Add code
+                // Check there's something to work with
+                if (this.csvLinesTextBox.TextLength == 0)
+                {
+                    // Halt flow
+                    return;
+                }
+
+                // 
             }
         }
 
@@ -432,6 +439,27 @@ namespace csv2key
                 // Advise user
                 MessageBox.Show($"Error saving settings file.{Environment.NewLine}{Environment.NewLine}Message:{Environment.NewLine}{exception.Message}", "File error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        /// <summary>
+        /// Handles the csv lines text box text changed event.
+        /// </summary>
+        /// <param name="sender">Sender object.</param>
+        /// <param name="e">Event arguments.</param>
+        private void OnCsvLinesTextBoxTextChanged(object sender, EventArgs e)
+        {
+            // Update line count
+            this.lineCountToolStripStatusLabel.Text = this.csvLinesTextBox.Lines.Length.ToString();
+        }
+
+        /// <summary>
+        /// Handles the check box checked changed event.
+        /// </summary>
+        /// <param name="sender">Sender object.</param>
+        /// <param name="e">Event arguments.</param>
+        private void OnCheckBoxCheckedChanged(object sender, EventArgs e)
+        {
+            // TODO Add code
         }
 
         /// <summary>
