@@ -350,27 +350,8 @@ namespace csv2key
             this.inactiveRadioButton.Font = new Font(this.activeRadioButton.Font, FontStyle.Regular);
             this.activeRadioButton.Font = new Font(this.inactiveRadioButton.Font, FontStyle.Bold);
 
-            // Try to unregister the key
-            try
-            {
-                // Unregister the hotkey
-                UnregisterHotKey(this.Handle, 0);
-            }
-            catch
-            {
-                // Let it fall through
-            }
-
-            // Hotkey registration
-            try
-            {
-                // Register the hotkey with selected modifiers
-                RegisterHotKey(this.Handle, 0, (this.controlCheckBox.Checked ? MOD_CONTROL : 0) + (this.altCheckBox.Checked ? MOD_ALT : 0) + (this.shiftCheckBox.Checked ? MOD_SHIFT : 0), Convert.ToInt16((Keys)Enum.Parse(typeof(Keys), this.keyComboBox.SelectedItem.ToString(), true)));
-            }
-            catch
-            {
-                // Let it fall through
-            }
+            // Register hotkey
+            this.ProcessHotkeyRegistration(true);
         }
 
 
@@ -385,11 +366,39 @@ namespace csv2key
             this.activeRadioButton.Font = new Font(this.activeRadioButton.Font, FontStyle.Regular);
             this.inactiveRadioButton.Font = new Font(this.inactiveRadioButton.Font, FontStyle.Bold);
 
+            // Unregister hotkey
+            this.ProcessHotkeyRegistration(false);
+        }
+
+        /// <summary>
+        /// Processes the hotkey registration.
+        /// </summary>
+        /// <param name="registerHotkey">If set to <c>true</c> register hotkey.</param>
+        private void ProcessHotkeyRegistration(bool registerHotkey)
+        {
             // Try to unregister the key
             try
             {
                 // Unregister the hotkey
                 UnregisterHotKey(this.Handle, 0);
+            }
+            catch
+            {
+                // Let it fall through
+            }
+
+            // Halt on unregister
+            if (!registerHotkey)
+            {
+                // Halt flow
+                return;
+            }
+
+            // Hotkey registration
+            try
+            {
+                // Register the hotkey with selected modifiers
+                RegisterHotKey(this.Handle, 0, (this.controlCheckBox.Checked ? MOD_CONTROL : 0) + (this.altCheckBox.Checked ? MOD_ALT : 0) + (this.shiftCheckBox.Checked ? MOD_SHIFT : 0), Convert.ToInt16((Keys)Enum.Parse(typeof(Keys), this.keyComboBox.SelectedItem.ToString(), true)));
             }
             catch
             {
