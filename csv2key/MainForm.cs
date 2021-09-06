@@ -232,11 +232,11 @@ namespace csv2key
                 // Check there's something to work with
                 if (this.csvLinesTextBox.TextLength == 0)
                 {
+                    // TODO Advise user
+
                     // Halt flow
                     return;
                 }
-
-                // 
             }
         }
 
@@ -468,7 +468,8 @@ namespace csv2key
         /// <param name="e">Event arguments.</param>
         private void OnCheckBoxCheckedChanged(object sender, EventArgs e)
         {
-            // TODO Add code
+            // Process hotkey
+            this.ProcessHotkeyRegistration(this.activeRadioButton.Checked);
         }
 
         /// <summary>
