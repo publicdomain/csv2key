@@ -219,7 +219,7 @@ namespace csv2key
         }
 
         /// <summary>
-        /// Windows the proc.
+        /// Window procedure.
         /// </summary>
         /// <param name="m">M.</param>
         protected override void WndProc(ref Message m)
@@ -232,7 +232,8 @@ namespace csv2key
                 // Check there's something to work with
                 if (this.csvLinesTextBox.TextLength == 0)
                 {
-                    // TODO Advise user
+                    // Advise user
+                    MessageBox.Show("No lines to process!", "Empty", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
 
                     // Halt flow
                     return;
