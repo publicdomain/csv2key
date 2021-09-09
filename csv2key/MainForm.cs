@@ -124,6 +124,9 @@ namespace csv2key
             // Load settings from disk
             this.settingsData = this.LoadSettingsFile(this.settingsDataPath);
 
+            // Set timer auto reset
+            this.hotkeyTimer.AutoReset = false;
+
             // Set hotkey timer elapsed handler
             this.hotkeyTimer.Elapsed += new ElapsedEventHandler(OnHotkeyTimerElapsed);
         }
@@ -149,13 +152,29 @@ namespace csv2key
 
                 /* Process hotkey press */
 
-                // Check if timer is disabled
+                // Act upon a disabled or enabled timer
                 if (!this.hotkeyTimer.Enabled)
                 {
-                    // Set send key interval
-                    this.hotkeyTimer.Interval = int.Parse(this.delayComboBox.Text);
+                    // Try to parse delay/interval
+                    if (!int.TryParse(this.delayComboBox.Text, out int parsedDelay))
+                    {
+                        // Set parsed delay
+                        parsedDelay = 75;
 
+                        // Set combo box to 75 ms
+                        this.delayComboBox.Text = parsedDelay.ToString();
+                    }
 
+                    // Set interval to parsed delay
+                    this.hotkeyTimer.Interval = parsedDelay;
+
+                    // Start the timer
+                    this.hotkeyTimer.Start();
+                }
+                else
+                {
+                    // Stop the timer
+                    this.hotkeyTimer.Stop();
                 }
             }
             else
