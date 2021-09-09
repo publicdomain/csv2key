@@ -13,6 +13,7 @@ namespace csv2key
     using System.IO;
     using System.Reflection;
     using System.Runtime.InteropServices;
+    using System.Timers;
     using System.Windows.Forms;
     using System.Xml.Serialization;
     using PublicDomainWeekly;
@@ -38,6 +39,15 @@ namespace csv2key
         /// </summary>
         private string settingsDataPath = $"{Application.ProductName}-SettingsData.txt";
 
+        /// <summary>
+        /// The hotkey timer.
+        /// </summary>
+        private System.Timers.Timer hotkeyTimer = new System.Timers.Timer();
+
+        /// <summary>
+        /// The index of the caret.
+        /// </summary>
+        private int caretIndex = 0;
 
         /// <summary>
         /// Registers the hot key.
@@ -113,6 +123,57 @@ namespace csv2key
 
             // Load settings from disk
             this.settingsData = this.LoadSettingsFile(this.settingsDataPath);
+
+            // Set hotkey timer elapsed handler
+            this.hotkeyTimer.Elapsed += new ElapsedEventHandler(OnHotkeyTimerElapsed);
+        }
+
+        /// <summary>
+        /// Window procedure.
+        /// </summary>
+        /// <param name="m">M.</param>
+        protected override void WndProc(ref Message m)
+        {
+            // Check for hotkey press
+            if (m.Msg == WM_HOTKEY)
+            {
+                // Check there's something to work with
+                if (this.csvLinesTextBox.TextLength == 0)
+                {
+                    // Advise user
+                    MessageBox.Show("No lines to process!", "Empty", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+
+                    // Halt flow
+                    return;
+                }
+
+                /* Process hotkey press */
+
+                // Check if timer is disabled
+                if (!this.hotkeyTimer.Enabled)
+                {
+                    // Set send key interval
+                    this.hotkeyTimer.Interval = int.Parse(this.delayComboBox.Text);
+
+
+                }
+            }
+            else
+            {
+                // Process message
+                base.WndProc(ref m);
+            }
+        }
+
+
+        /// <summary>
+        /// Handles the hotkey timer elapsed event.
+        /// </summary>
+        /// <param name="sender">Sender object.</param>
+        /// <param name="e">Event arguments.</param>
+        private void OnHotkeyTimerElapsed(Object sender, ElapsedEventArgs e)
+        {
+            // TODO Add code
         }
 
         /// <summary>
@@ -169,8 +230,11 @@ namespace csv2key
             // New line
             this.settingsData.NewLineTranslation = this.newLineTranslationTextBox.Text;
 
-            // Lines per press
-            this.settingsData.LinesPerPress = Convert.ToInt32(this.linesNumericUpDown.Value);
+            // Input file
+            this.settingsData.InputFile = this.csvFileTextBox.Text;
+
+            // Caret index
+            this.settingsData.CaretIndex = this.caretIndex;
 
             // Active/Inactive
             this.settingsData.EnableHotkeys = this.activeRadioButton.Checked;
@@ -201,9 +265,11 @@ namespace csv2key
             // New line
             this.newLineTranslationTextBox.Text = this.settingsData.NewLineTranslation;
 
-            // Lines per press
-            this.linesNumericUpDown.Value = this.settingsData.LinesPerPress;
+            // Input file
+            this.csvFileTextBox.Text = this.settingsData.InputFile;
 
+            // Caret index
+            this.caretIndex = this.settingsData.CaretIndex;
 
             // Check active or inactive
             if (this.settingsData.EnableHotkeys)
@@ -217,30 +283,6 @@ namespace csv2key
                 this.inactiveRadioButton.Checked = true;
             }
         }
-
-        /// <summary>
-        /// Window procedure.
-        /// </summary>
-        /// <param name="m">M.</param>
-        protected override void WndProc(ref Message m)
-        {
-            base.WndProc(ref m);
-
-            // Check for hotkey press
-            if (m.Msg == WM_HOTKEY)
-            {
-                // Check there's something to work with
-                if (this.csvLinesTextBox.TextLength == 0)
-                {
-                    // Advise user
-                    MessageBox.Show("No lines to process!", "Empty", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-
-                    // Halt flow
-                    return;
-                }
-            }
-        }
-
 
         /// <summary>
         /// Handles the new tool strip menu item click event.
@@ -324,6 +366,13 @@ namespace csv2key
 
             // HACK Topmost on start [DEBUG]
             this.TopMost = this.settingsData.TopMost;
+
+            // Load file into text box
+            if (this.settingsData.InputFile.Length > 0 && File.Exists(this.settingsData.InputFile))
+            {
+                // Populate file text box
+                this.csvLinesTextBox.Lines = File.ReadAllLines(this.settingsData.InputFile);
+            }
         }
 
         /// <summary>

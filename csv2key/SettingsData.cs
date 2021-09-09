@@ -71,12 +71,6 @@ namespace PublicDomainWeekly
         public string NewLineTranslation { get; set; } = "{ENTER";
 
         /// <summary>
-        /// Gets or sets the lines per press.
-        /// </summary>
-        /// <value>The lines per press.</value>
-        public int LinesPerPress { get; set; } = 0;
-
-        /// <summary>
         /// Gets or sets the input file.
         /// </summary>
         /// <value>The input file.</value>
@@ -86,13 +80,7 @@ namespace PublicDomainWeekly
         /// Gets or sets the index.
         /// </summary>
         /// <value>The index.</value>
-        public int LineIndex { get; set; } = 1;
-
-        /// <summary>
-        /// Gets or sets the index of the character.
-        /// </summary>
-        /// <value>The index of the character.</value>
-        public int CharacterIndex { get; set; } = 1;
+        public int CaretIndex { get; set; } = 1;
 
         /// <summary>
         /// Gets or sets a value indicating whether this <see cref="T:PublicDomain.SettingsData"/> enable hotkeys.
