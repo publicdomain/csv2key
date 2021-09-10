@@ -50,6 +50,16 @@ namespace csv2key
         private int caretIndex = 0;
 
         /// <summary>
+        /// The timer enabled flag.
+        /// </summary>
+        private bool timerEnabled = false;
+
+        /// <summary>
+        /// The processed file contents.
+        /// </summary>
+        private string processedFileContents = String.Empty;
+
+        /// <summary>
         /// Registers the hot key.
         /// </summary>
         /// <returns><c>true</c>, if hot key was registered, <c>false</c> otherwise.</returns>
@@ -137,6 +147,9 @@ namespace csv2key
         /// <param name="m">M.</param>
         protected override void WndProc(ref Message m)
         {
+            // Process message
+            base.WndProc(ref m);
+
             // Check for hotkey press
             if (m.Msg == WM_HOTKEY)
             {
@@ -150,11 +163,24 @@ namespace csv2key
                     return;
                 }
 
+                // Check for focus
+                if (Form.ActiveForm != null)
+                {
+                    // Advise user
+                    MessageBox.Show("Please focus target window then press hotkey.", "Self-focused", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+
+                    // Halr flow
+                    return;
+                }
+
                 /* Process hotkey press */
 
-                // Act upon a disabled or enabled timer
-                if (!this.hotkeyTimer.Enabled)
+                // Act upon a disabled
+                if (!this.timerEnabled)
                 {
+                    // Process file contents 
+                    this.processedFileContents = this.csvLinesTextBox.Text.Replace(Environment.NewLine, "\n"); // Take care of \r\n
+
                     // Try to parse delay/interval
                     if (!int.TryParse(this.delayComboBox.Text, out int parsedDelay))
                     {
@@ -168,22 +194,29 @@ namespace csv2key
                     // Set interval to parsed delay
                     this.hotkeyTimer.Interval = parsedDelay;
 
+                    // Toggle timer enabled flag
+                    timerEnabled = true;
+
+                    // Check if must reset caret index
+                    if (this.caretIndex >= this.processedFileContents.Length)
+                    {
+                        // Reset caret
+                        this.ResetCaretAndUpdateStatus();
+                    }
+
                     // Start the timer
                     this.hotkeyTimer.Start();
                 }
                 else
                 {
+                    // Toggle timer enabled flag
+                    timerEnabled = false;
+
                     // Stop the timer
                     this.hotkeyTimer.Stop();
                 }
             }
-            else
-            {
-                // Process message
-                base.WndProc(ref m);
-            }
         }
-
 
         /// <summary>
         /// Handles the hotkey timer elapsed event.
@@ -192,7 +225,110 @@ namespace csv2key
         /// <param name="e">Event arguments.</param>
         private void OnHotkeyTimerElapsed(Object sender, ElapsedEventArgs e)
         {
-            // TODO Add code
+            // Check timer is enabled
+            if (!this.timerEnabled)
+            {
+                // Stop the timer
+                this.hotkeyTimer.Stop();
+
+                // Halt flow
+                return;
+            }
+
+            try
+            {
+                // Capture two chars to check for double-char new line 
+                string currentKey = this.processedFileContents.Substring(this.caretIndex, 1);
+
+                // Check for special characters
+                switch (currentKey)
+                {
+                    // Comma
+                    case ",":
+
+                        currentKey = this.commaTranslationTextBox.Text;
+
+                        break;
+
+                    // new line
+                    case "\n":
+
+                        currentKey = this.newLineTranslationTextBox.Text;
+
+                        break;
+                }
+
+                // Send key
+                SendKeys.SendWait(currentKey);
+
+                // Check caret index for next
+                if ((this.caretIndex + 1) < this.processedFileContents.Length)
+                {
+                    // Raise caret index
+                    this.caretIndex++;
+
+                    // Move the caret
+                    this.MoveCaret(this.caretIndex);
+
+                    // Update status label
+                    this.indexCountToolStripStatusLabel.Text = this.caretIndex.ToString();
+
+                    // Perform next tick
+                    this.hotkeyTimer.Start();
+                }
+                else
+                {
+                    // Disable & stop the timer by caret index
+                    this.DisableAndStop();
+
+                    // Reset caret
+                    this.ResetCaretAndUpdateStatus();
+                }
+            }
+            catch (Exception exception)
+            {
+                // Disable & stop the timer
+                this.DisableAndStop();
+
+                // Advise user
+                MessageBox.Show($"An error occurred. Message:{Environment.NewLine}{exception.Message}", "Timer error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        /// <summary>
+        /// Disables the and stop.
+        /// </summary>
+        private void DisableAndStop()
+        {
+            // Toggle enabled
+            this.timerEnabled = false;
+
+            // Stop the timer
+            this.hotkeyTimer.Stop();
+        }
+
+        /// <summary>
+        /// Moves the caret.
+        /// </summary>
+        /// <param name="index">Index.</param>
+        private void MoveCaret(int index)
+        {
+            // Move caret to passed index
+            this.csvLinesTextBox.Select(index, 1);
+            //this.csvLinesTextBox.Focus();
+            this.csvLinesTextBox.ScrollToCaret();
+        }
+
+        /// <summary>
+        /// Resets the caret and updates the status.
+        /// </summary>
+        private void ResetCaretAndUpdateStatus()
+        {
+            // Reset caret index
+            this.caretIndex = 0;
+
+            // Reflect on status
+            this.indexCountToolStripStatusLabel.Text = "0";
         }
 
         /// <summary>
@@ -289,6 +425,9 @@ namespace csv2key
 
             // Caret index
             this.caretIndex = this.settingsData.CaretIndex;
+
+            // Update caret index on status
+            this.indexCountToolStripStatusLabel.Text = this.caretIndex.ToString();
 
             // Check active or inactive
             if (this.settingsData.EnableHotkeys)
@@ -403,6 +542,9 @@ namespace csv2key
         {
             // Set settings from GUI
             this.GuiToSettingsSata();
+
+            // Unregister the hotkey
+            this.ProcessHotkeyRegistration(false);
 
             // Save to disk
             this.SaveSettingsFile(this.settingsDataPath, this.settingsData);

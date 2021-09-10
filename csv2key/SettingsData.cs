@@ -68,7 +68,7 @@ namespace PublicDomainWeekly
         /// Gets or sets the new line translation.
         /// </summary>
         /// <value>The new line translation.</value>
-        public string NewLineTranslation { get; set; } = "{ENTER";
+        public string NewLineTranslation { get; set; } = "{ENTER}";
 
         /// <summary>
         /// Gets or sets the input file.
