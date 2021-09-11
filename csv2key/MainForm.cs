@@ -100,6 +100,11 @@ namespace csv2key
         private static int WM_HOTKEY = 0x0312;
 
         /// <summary>
+        /// The parse start delay.
+        /// </summary>
+        private int parseStartDelay = 0;
+
+        /// <summary>
         /// Initializes a new instance of the <see cref="T:csv2key.MainForm"/> class.
         /// </summary>
         public MainForm()
@@ -191,8 +196,18 @@ namespace csv2key
                         this.delayComboBox.Text = parsedDelay.ToString();
                     }
 
-                    // Set interval to parsed delay
-                    this.hotkeyTimer.Interval = parsedDelay;
+                    // Try to parse start delay
+                    if (!int.TryParse(this.startDelayComboBox.Text, out this.parseStartDelay))
+                    {
+                        // Set parsed start delay
+                        this.parseStartDelay = 1000;
+
+                        // Set combo box to 75 ms
+                        this.startDelayComboBox.Text = this.parseStartDelay.ToString();
+                    }
+
+                    // TODO Set interval to parsed delay  {There can be better logic to handle start delay processing}
+                    this.hotkeyTimer.Interval = parsedDelay + this.parseStartDelay;
 
                     // Toggle timer enabled flag
                     timerEnabled = true;
@@ -204,6 +219,9 @@ namespace csv2key
                         this.ResetCaretAndUpdateStatus();
                     }
 
+                    // Update status 
+                    this.timerStatusToolStripStatusLabel.Text = "Running";
+
                     // Start the timer
                     this.hotkeyTimer.Start();
                 }
@@ -211,6 +229,9 @@ namespace csv2key
                 {
                     // Toggle timer enabled flag
                     timerEnabled = false;
+
+                    // Update status 
+                    this.timerStatusToolStripStatusLabel.Text = "Stopped";
 
                     // Stop the timer
                     this.hotkeyTimer.Stop();
@@ -273,6 +294,13 @@ namespace csv2key
                     // Update status label
                     this.indexCountToolStripStatusLabel.Text = this.caretIndex.ToString();
 
+                    // TODO Re-set interval [Can be improved]
+                    if (this.hotkeyTimer.Interval > this.parseStartDelay)
+                    {
+                        // Subtract parsed delay
+                        this.hotkeyTimer.Interval = this.hotkeyTimer.Interval - this.parseStartDelay;
+                    }
+
                     // Perform next tick
                     this.hotkeyTimer.Start();
                 }
@@ -302,6 +330,9 @@ namespace csv2key
         {
             // Toggle enabled
             this.timerEnabled = false;
+
+            // Update status 
+            this.timerStatusToolStripStatusLabel.Text = "Stopped";
 
             // Stop the timer
             this.hotkeyTimer.Stop();
