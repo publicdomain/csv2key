@@ -59,6 +59,12 @@ namespace PublicDomainWeekly
         public int DelayMilliseconds { get; set; } = 75;
 
         /// <summary>
+        /// Gets or sets the start delay milliseconds.
+        /// </summary>
+        /// <value>The start delay milliseconds.</value>
+        public int StartDelayMilliseconds { get; set; } = 1000;
+
+        /// <summary>
         /// Gets or sets the comma translation.
         /// </summary>
         /// <value>The comma translation.</value>

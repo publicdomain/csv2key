@@ -288,8 +288,8 @@ namespace csv2key
                     // Raise caret index
                     this.caretIndex++;
 
-                    // Move the caret
-                    this.MoveCaret(this.caretIndex);
+                    // TODO Move the caret [Implement \r\n correction to match index]
+                    // this.MoveCaret(this.caretIndex);
 
                     // Update status label
                     this.indexCountToolStripStatusLabel.Text = this.caretIndex.ToString();
@@ -410,6 +410,9 @@ namespace csv2key
             // Delay
             this.settingsData.DelayMilliseconds = int.Parse(this.delayComboBox.Text);
 
+            // Start delay
+            this.settingsData.StartDelayMilliseconds = int.Parse(this.startDelayComboBox.Text);
+
             // Comma
             this.settingsData.CommaTranslation = this.commaTranslationTextBox.Text;
 
@@ -444,6 +447,9 @@ namespace csv2key
 
             // Delay
             this.delayComboBox.Text = this.settingsData.DelayMilliseconds.ToString();
+
+            // Start delay
+            this.startDelayComboBox.Text = this.settingsData.StartDelayMilliseconds.ToString();
 
             // Comma
             this.commaTranslationTextBox.Text = this.settingsData.CommaTranslation;
@@ -480,7 +486,28 @@ namespace csv2key
         /// <param name="e">Event arguments.</param>
         private void OnNewToolStripMenuItemClick(object sender, EventArgs e)
         {
-            // TODO Add code
+            // Ask user
+            if (MessageBox.Show("Would you like to regenerate initial settings?", "Reset", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2) == DialogResult.Yes)
+            {
+                // Check for settings file
+                if (File.Exists(this.settingsDataPath))
+                {
+                    // Delete previous settings file
+                    File.Delete(this.settingsDataPath);
+                }
+
+                // Clear file lines
+                this.csvLinesTextBox.Clear();
+
+                // Regenerate settings data
+                this.SaveSettingsFile(this.settingsDataPath, new SettingsData());
+
+                // Load settings from disk
+                this.settingsData = this.LoadSettingsFile(this.settingsDataPath);
+
+                // Process the settings laod
+                this.ProcessSettingsLoad();
+            }
         }
 
         /// <summary>
@@ -549,6 +576,15 @@ namespace csv2key
         /// <param name="sender">Sender object.</param>
         /// <param name="e">Event arguments.</param>
         private void OnMainFormLoad(object sender, EventArgs e)
+        {
+            // Process the settings laod
+            this.ProcessSettingsLoad();
+        }
+
+        /// <summary>
+        /// Processes the settings load.
+        /// </summary>
+        private void ProcessSettingsLoad()
         {
             // Update GUI to reflect settings data
             this.SettingsDataToGui();
