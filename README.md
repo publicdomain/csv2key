@@ -19,7 +19,7 @@ v0.1.0:
 - User-configurable hotkeys.
 - Start/stop using the same hotkey.
 - Configurable delay between sending keys.
-- Configurable translation for comma and new line. ([Sendkey.Send reference](https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.sendkeys.send?view=net-5.0))
+- Configurable translation for comma and new line. ([Sendkeys.Send reference](https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.sendkeys.send?view=net-5.0))
 - Configurable start delay.
 - Active/Inactive toggling.
 - Always on top.
